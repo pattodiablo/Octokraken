@@ -1,0 +1,56 @@
+{
+    "id": "f6f2b183-ee44-49d5-97c5-3e8d5682cdf0",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Creditos"
+    },
+    "displayList": [
+        {
+            "type": "TileSprite",
+            "id": "98dfbda9-da31-458d-b9bc-557bc179e0f8",
+            "label": "background",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "background"
+            },
+            "originX": 0,
+            "originY": 0,
+            "width": 64,
+            "height": 64
+        },
+        {
+            "type": "Sprite",
+            "id": "43412b4d-9cf0-4a72-87b1-e2d61e9d518c",
+            "label": "jugarBtn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "jugarBtn"
+            },
+            "x": 400,
+            "y": 539
+        },
+        {
+            "type": "Text",
+            "id": "88adcab0-98b0-401a-9d6a-21c8ab17c5d8",
+            "label": "CreditsPanel",
+            "components": [],
+            "x": 247,
+            "y": 45,
+            "text": "-- Arte y Diseño --\nKaithzer Morejón\nPaz Rodríguez\nCamilo Dexsidia\nKama Tenesaca\n\n-- Música --\nAgustín Carrión\nFalcon Light\n\n-- Project Manager --\nRuth Valverde\n\n-- Programación --\nRicardo Piedra\nDiego León\nPatricio León (Weveana)\n",
+            "align": "center",
+            "fontFamily": "Kanit",
+            "fontSize": "32px"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

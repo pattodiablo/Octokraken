@@ -1,0 +1,282 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/background.png",
+                "type": "image",
+                "key": "background"
+            },
+            {
+                "url": "assets/boss.png",
+                "type": "image",
+                "key": "boss"
+            },
+            {
+                "url": [
+                    "src/prefabs/Boss.js"
+                ],
+                "type": "scripts",
+                "key": "Boss"
+            },
+            {
+                "url": "assets/botonera.png",
+                "type": "image",
+                "key": "botonera"
+            },
+            {
+                "url": "assets/creditos.png",
+                "type": "image",
+                "key": "creditos"
+            },
+            {
+                "url": "src/scenes/Creditos.js",
+                "type": "sceneFile",
+                "key": "Creditos"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/enemy_destroy.mp3"
+                ],
+                "type": "audio",
+                "key": "enemy_destroy"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/enemy_destroy2.mp3"
+                ],
+                "type": "audio",
+                "key": "enemy_destroy2"
+            },
+            {
+                "url": "assets/enemy1.png",
+                "type": "image",
+                "key": "enemy1"
+            },
+            {
+                "url": [
+                    "src/prefabs/Enemy1.js"
+                ],
+                "type": "scripts",
+                "key": "Enemy1"
+            },
+            {
+                "url": "assets/enemy2.png",
+                "type": "image",
+                "key": "enemy2"
+            },
+            {
+                "url": [
+                    "src/prefabs/Enemy2.js"
+                ],
+                "type": "scripts",
+                "key": "Enemy2"
+            },
+            {
+                "url": "assets/enemy3.png",
+                "type": "image",
+                "key": "enemy3"
+            },
+            {
+                "url": [
+                    "src/prefabs/Enemy3.js"
+                ],
+                "type": "scripts",
+                "key": "Enemy3"
+            },
+            {
+                "url": "assets/enemy4.png",
+                "type": "image",
+                "key": "enemy4"
+            },
+            {
+                "url": [
+                    "src/prefabs/Enemy4.js"
+                ],
+                "type": "scripts",
+                "key": "Enemy4"
+            },
+            {
+                "url": "assets/enemy5.png",
+                "type": "image",
+                "key": "enemy5"
+            },
+            {
+                "url": [
+                    "src/prefabs/Enemy5.js"
+                ],
+                "type": "scripts",
+                "key": "Enemy5"
+            },
+            {
+                "atlasURL": "assets/atlas/explosion.json",
+                "textureURL": "assets/atlas/explosion.png",
+                "type": "atlas",
+                "key": "explosion"
+            },
+            {
+                "url": "assets/animations/explosion1.json",
+                "type": "animation",
+                "key": "explosion1"
+            },
+            {
+                "atlasURL": "assets/atlas/flares.json",
+                "textureURL": "assets/atlas/flares.png",
+                "type": "atlas",
+                "key": "flares"
+            },
+            {
+                "url": "src/scenes/GameOver.js",
+                "type": "sceneFile",
+                "key": "GameOver"
+            },
+            {
+                "url": [
+                    "src/prefabs/GameOverAnimation.js"
+                ],
+                "type": "scripts",
+                "key": "GameOverAnimation"
+            },
+            {
+                "url": "assets/heart.png",
+                "type": "image",
+                "key": "heart"
+            },
+            {
+                "url": [
+                    "src/prefabs/Heart.js"
+                ],
+                "type": "scripts",
+                "key": "Heart"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/hurt.mp3"
+                ],
+                "type": "audio",
+                "key": "hurt"
+            },
+            {
+                "url": "src/scenes/Inicio.js",
+                "type": "sceneFile",
+                "key": "Inicio"
+            },
+            {
+                "url": "assets/jugarBtn.png",
+                "type": "image",
+                "key": "jugarBtn"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/laser_shot.mp3"
+                ],
+                "type": "audio",
+                "key": "laser_shot"
+            },
+            {
+                "url": "assets/logo.png",
+                "type": "image",
+                "key": "logo"
+            },
+            {
+                "url": "assets/player.png",
+                "type": "image",
+                "key": "player"
+            },
+            {
+                "url": [
+                    "src/prefabs/Player.js"
+                ],
+                "type": "scripts",
+                "key": "Player"
+            },
+            {
+                "atlasURL": "assets/atlas/playerAnimations.json",
+                "textureURL": "assets/atlas/playerAnimations.png",
+                "type": "atlas",
+                "key": "playerAnimations"
+            },
+            {
+                "url": "assets/playerBullet.png",
+                "type": "image",
+                "key": "playerBullet"
+            },
+            {
+                "url": [
+                    "src/prefabs/PlayerBullet.js"
+                ],
+                "type": "scripts",
+                "key": "PlayerBullet"
+            },
+            {
+                "atlasURL": "assets/atlas/propsNew.json",
+                "textureURL": "assets/atlas/propsNew.png",
+                "type": "atlas",
+                "key": "propsNew"
+            },
+            {
+                "url": "assets/rejugarBtn.png",
+                "type": "image",
+                "key": "rejugarBtn"
+            },
+            {
+                "url": [
+                    "src/prefabs/Shield.js"
+                ],
+                "type": "scripts",
+                "key": "Shield"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/shield_up.mp3"
+                ],
+                "type": "audio",
+                "key": "shield_up"
+            },
+            {
+                "url": "assets/ShieldImg.png",
+                "type": "image",
+                "key": "ShieldImg"
+            },
+            {
+                "url": [
+                    "src/prefabs/ShipShield.js"
+                ],
+                "type": "scripts",
+                "key": "ShipShield"
+            },
+            {
+                "url": [
+                    "assets/audio/music/soundtrack01.mp3"
+                ],
+                "type": "audio",
+                "key": "soundtrack01"
+            },
+            {
+                "url": "assets/splash_art.png",
+                "type": "image",
+                "key": "splash_art"
+            },
+            {
+                "url": [
+                    "assets/audio/music/splash_screen.mp3"
+                ],
+                "type": "audio",
+                "key": "splash_screen"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/travel.mp3"
+                ],
+                "type": "audio",
+                "key": "travel"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

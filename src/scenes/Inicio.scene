@@ -1,0 +1,92 @@
+{
+    "id": "3f2d3495-9f0e-4575-8d9e-ef0ae1a39e94",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Inicio"
+    },
+    "displayList": [
+        {
+            "type": "TileSprite",
+            "id": "c61f7343-07be-4dd1-9f7b-a0fccd0fe15f",
+            "label": "background",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "background"
+            },
+            "originX": 0,
+            "originY": 0,
+            "width": 64,
+            "height": 64
+        },
+        {
+            "type": "Image",
+            "id": "2990abd6-5ad6-45f3-a75c-f0bc9abb3bed",
+            "label": "splashArt",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "splash_art"
+            },
+            "x": 405,
+            "y": 312
+        },
+        {
+            "type": "Sprite",
+            "id": "39a25635-1c54-49ba-8e73-f98c7222da47",
+            "label": "botonera",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "botonera"
+            },
+            "x": 418,
+            "y": 404
+        },
+        {
+            "type": "Sprite",
+            "id": "58247e8b-f530-4cc6-9861-bd274ef03fc1",
+            "label": "jugarBtn",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "jugarBtn"
+            },
+            "x": 420,
+            "y": 382
+        },
+        {
+            "type": "Sprite",
+            "id": "df0a0646-b131-400a-a8c4-185a44421be6",
+            "label": "creditos",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "creditos"
+            },
+            "x": 418,
+            "y": 487
+        },
+        {
+            "type": "Sprite",
+            "id": "d6bfa9c7-aa9d-41f4-b353-5d4cb5bdc15c",
+            "label": "logo",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "logo"
+            },
+            "x": 430,
+            "y": 294
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

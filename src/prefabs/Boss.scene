@@ -1,0 +1,27 @@
+{
+    "id": "099cd796-233f-4494-a97a-38ccb9d899c8",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "8d792cc9-ad58-4546-b4d7-9f4170087506",
+            "label": "boss",
+            "components": [],
+            "texture": {
+                "key": "boss"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
