@@ -20,9 +20,6 @@ class Inicio extends Phaser.Scene {
 		const background = this.add.tileSprite(0, 0, 64, 64, "background");
 		background.setOrigin(0, 0);
 
-		// splashArt
-		const splashArt = this.add.image(405, 312, "splash_art");
-
 		// botonera
 		const botonera = this.add.sprite(418, 404, "botonera");
 
@@ -32,31 +29,22 @@ class Inicio extends Phaser.Scene {
 		// creditos
 		const creditos = this.add.sprite(418, 487, "creditos");
 
-		// logo
-		const logo = this.add.sprite(430, 294, "logo");
-
 		this.background = background;
-		this.splashArt = splashArt;
 		this.botonera = botonera;
 		this.jugarBtn = jugarBtn;
 		this.creditos = creditos;
-		this.logo = logo;
 
 		this.events.emit("scene-awake");
 	}
 
 	/** @type {Phaser.GameObjects.TileSprite} */
 	background;
-	/** @type {Phaser.GameObjects.Image} */
-	splashArt;
 	/** @type {Phaser.GameObjects.Sprite} */
 	botonera;
 	/** @type {Phaser.GameObjects.Sprite} */
 	jugarBtn;
 	/** @type {Phaser.GameObjects.Sprite} */
 	creditos;
-	/** @type {Phaser.GameObjects.Sprite} */
-	logo;
 
 	/* START-USER-CODE */
 
@@ -80,15 +68,7 @@ class Inicio extends Phaser.Scene {
 		this.background.width=3000;
 		this.background.height=3000;
 
-		this.splashArt.setOrigin(0,0);
-		this.splashArt.x=0;
-		this.splashArt.y=0;
-		this.splashArt.displayWidth=document.body.clientWidth;
-		this.splashArt.displayHeight=document.body.clientHeight;
 
-		this.logo.setScale(0.6,0.6);
-		this.logo.x = 400;
-		this.logo.y = 200;
 
 		this.botonera.setScale(0.6,0.6);
 		this.botonera.x = this.cameras.main.centerX+350;

@@ -178,6 +178,11 @@
                 "key": "logo"
             },
             {
+                "url": "assets/PatoAlarcon.png",
+                "type": "image",
+                "key": "PatoAlarcon"
+            },
+            {
                 "url": "assets/player.png",
                 "type": "image",
                 "key": "player"
@@ -206,6 +211,11 @@
                 ],
                 "type": "scripts",
                 "key": "PlayerBullet"
+            },
+            {
+                "url": "assets/playerPato.png",
+                "type": "image",
+                "key": "playerPato"
             },
             {
                 "atlasURL": "assets/atlas/propsNew.json",

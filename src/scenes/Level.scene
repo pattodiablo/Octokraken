@@ -31,107 +31,15 @@
             "label": "player",
             "scope": "CLASS",
             "components": [],
-            "x": 296,
-            "y": 276
-        },
-        {
-            "prefabId": "c4711ad5-e15c-4a9d-a2b2-9a876f874654",
-            "id": "be3bbec5-aa6e-4c61-8682-9bd8fab1a526",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "heart1",
-            "scope": "CLASS",
-            "components": [],
-            "x": 26,
-            "y": 23
-        },
-        {
-            "prefabId": "c4711ad5-e15c-4a9d-a2b2-9a876f874654",
-            "id": "5f69d658-900f-4568-b40f-7b9cc6d8375b",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "heart2",
-            "scope": "CLASS",
-            "components": [],
-            "x": 61,
-            "y": 22
-        },
-        {
-            "prefabId": "c4711ad5-e15c-4a9d-a2b2-9a876f874654",
-            "id": "06223b8d-77f0-45cc-8d7e-c0f21d690891",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "heart3",
-            "scope": "CLASS",
-            "components": [],
-            "x": 94,
-            "y": 22
-        },
-        {
-            "type": "Text",
-            "id": "8d89fb8f-04a8-4718-9895-4d5a2ca1bcca",
-            "label": "Score",
-            "scope": "CLASS",
-            "components": [],
-            "x": 602,
-            "y": 15,
-            "text": "SCORE",
-            "fontFamily": "KANIT",
-            "fontSize": "20px",
-            "color": "#ff0048",
-            "stroke": "#"
-        },
-        {
-            "type": "Text",
-            "id": "dee0e832-cdec-4e24-926d-29749cd52a78",
-            "label": "Ultimate",
-            "scope": "CLASS",
-            "components": [],
-            "x": 342,
-            "y": 413,
-            "text": "ULTIMATE DEFENSE",
-            "align": "center",
-            "fontFamily": "KANIT",
-            "fontSize": "20px",
-            "color": "#ff0048"
-        },
-        {
-            "type": "Text",
-            "id": "0ae27111-7fba-467f-afcf-d4e48add7c31",
-            "label": "Counter",
-            "scope": "CLASS",
-            "components": [],
-            "x": 685,
-            "y": 18,
-            "text": "00000",
-            "fontFamily": "KANIT",
-            "color": "#34eacdff"
-        },
-        {
-            "type": "Rectangle",
-            "id": "36e11fca-1851-44dc-ab01-0e0ded6ebf21",
-            "label": "rectangle",
-            "scope": "CLASS",
-            "components": [],
-            "x": 711,
-            "y": 18,
-            "fillColor": "#ff0048",
-            "strokeColor": "#ff0048",
-            "isStroked": true,
-            "width": 70,
-            "height": 30
+            "x": 43,
+            "y": 51
         }
     ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
     }
 }

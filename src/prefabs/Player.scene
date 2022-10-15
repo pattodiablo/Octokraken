@@ -13,8 +13,10 @@
             "label": "player",
             "components": [],
             "texture": {
-                "key": "player"
-            }
+                "key": "playerPato"
+            },
+            "x": 418,
+            "y": 161
         }
     ],
     "plainObjects": [],
