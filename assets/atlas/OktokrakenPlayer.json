@@ -1,8 +1,32 @@
 ﻿{"frames": {
 
+"firing instancia 10000":
+{
+	"frame": {"x":1,"y":1,"w":183,"h":206},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
+	"sourceSize": {"w":183,"h":206}
+},
+"firing instancia 10001":
+{
+	"frame": {"x":185,"y":1,"w":183,"h":206},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
+	"sourceSize": {"w":183,"h":206}
+},
+"firing instancia 10002":
+{
+	"frame": {"x":1,"y":208,"w":183,"h":206},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
+	"sourceSize": {"w":183,"h":206}
+},
 "idlePlayer instancia 10000":
 {
-	"frame": {"x":1,"y":1,"w":183,"h":201},
+	"frame": {"x":185,"y":208,"w":183,"h":201},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
@@ -10,7 +34,7 @@
 },
 "idlePlayer instancia 10001":
 {
-	"frame": {"x":185,"y":1,"w":183,"h":201},
+	"frame": {"x":1,"y":415,"w":183,"h":201},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
@@ -18,7 +42,7 @@
 },
 "idlePlayer instancia 10002":
 {
-	"frame": {"x":1,"y":203,"w":183,"h":201},
+	"frame": {"x":185,"y":415,"w":183,"h":201},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
@@ -29,7 +53,7 @@
 	"version": "19.2.1.408",
 	"image": "OktokrakenPlayer.png",
 	"format": "RGBA8888",
-	"size": {"w":512,"h":512},
+	"size": {"w":512,"h":1024},
 	"scale": "1"
 }
 }
