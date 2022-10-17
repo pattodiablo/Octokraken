@@ -24,6 +24,7 @@ create(){
 
 	this.isMouseDown = false;
 	this.y=this.scene.cameras.main.height/3;
+	this.x=this.scene.cameras.main.width/2;
 	
 	this.scene.input.on('pointerdown', function (pointer) { 
 
@@ -58,7 +59,21 @@ create(){
 
 defaultIdleAnim(){
 
-	
+
+	this.idleAnim = this.scene.tweens.createTimeline();
+	this.idleAnim.add({
+		targets: this,
+		scale: 0.95	,
+		duration: 500,
+		yoyo:true,
+		ease: 'Linear',
+		repeat: -1
+
+	});
+
+
+	this.idleAnim.play();
+
 }
 
 crearParticulas() {
