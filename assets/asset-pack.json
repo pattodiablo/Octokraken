@@ -7,6 +7,23 @@
                 "key": "background"
             },
             {
+                "url": "assets/backgroundKraken.png",
+                "type": "image",
+                "key": "backgroundKraken"
+            },
+            {
+                "url": "assets/berenjenaBullet.png",
+                "type": "image",
+                "key": "berenjenaBullet"
+            },
+            {
+                "url": [
+                    "src/prefabs/BerenjenaBullet.js"
+                ],
+                "type": "scripts",
+                "key": "BerenjenaBullet"
+            },
+            {
                 "url": "assets/boss.png",
                 "type": "image",
                 "key": "boss"
@@ -150,6 +167,13 @@
             },
             {
                 "url": [
+                    "src/prefabs/HitAnimation.js"
+                ],
+                "type": "scripts",
+                "key": "HitAnimation"
+            },
+            {
+                "url": [
                     "assets/audio/sfx/hurt.mp3"
                 ],
                 "type": "audio",
@@ -178,6 +202,29 @@
                 "key": "logo"
             },
             {
+                "url": "assets/moon.png",
+                "type": "image",
+                "key": "moon"
+            },
+            {
+                "atlasURL": "assets/atlas/OktokrakenPlayer.json",
+                "textureURL": "assets/atlas/OktokrakenPlayer.png",
+                "type": "atlas",
+                "key": "OktokrakenPlayer"
+            },
+            {
+                "url": [
+                    "src/scenes/ParticleQuito.js"
+                ],
+                "type": "scripts",
+                "key": "ParticleQuito"
+            },
+            {
+                "url": "assets/particles.png",
+                "type": "image",
+                "key": "particles"
+            },
+            {
                 "url": "assets/PatoAlarcon.png",
                 "type": "image",
                 "key": "PatoAlarcon"
@@ -201,6 +248,11 @@
                 "key": "playerAnimations"
             },
             {
+                "url": "assets/animations/PlayerAnimations.json",
+                "type": "animation",
+                "key": "PlayerAnimations"
+            },
+            {
                 "url": "assets/playerBullet.png",
                 "type": "image",
                 "key": "playerBullet"
@@ -216,6 +268,18 @@
                 "url": "assets/playerPato.png",
                 "type": "image",
                 "key": "playerPato"
+            },
+            {
+                "url": "assets/powerUp.png",
+                "type": "image",
+                "key": "powerUp"
+            },
+            {
+                "url": [
+                    "src/prefabs/PowerUp.js"
+                ],
+                "type": "scripts",
+                "key": "PowerUp"
             },
             {
                 "atlasURL": "assets/atlas/propsNew.json",

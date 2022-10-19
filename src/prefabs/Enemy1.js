@@ -19,27 +19,32 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	create(){
 		this.name=this.texture.key;
 		this.scene.physics.world.enableBody(this);
-
+		this.scene.enemies.push(this);
+		this.body.velocity.y=-80;
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
-		this.scene.physics.add.overlap(this.scene.playerBullets, this,this.enemyDestroy);
-		this.setScale(0.1)
-		this.animarNacimiento()
+		this.enemyLife=3;
+		
+		this.animarNacimiento();
 
 		this.vel = Phaser.Math.Between(80,200);
 		this.enemy_destroy = this.scene.sound.add('enemy_destroy');
 		this.enemy_destroy.loop = false;
+
+		this.enemy_destroy2 = this.scene.sound.add('enemy_destroy2');
+		this.enemy_destroy2.loop = false;
+
+		this.hurt = this.scene.sound.add('hurt');
+		this.hurt.loop = false;
 	}
 
 	update(){
-		if(this.active){
-			this.angle=90+(180/Math.PI)*Phaser.Math.Angle.Between(this.x,this.y,this.scene.player.x,this.scene.player.y); 
-			this.scene.physics.velocityFromAngle(-90+this.angle, this.vel , this.body.velocity);
-		}
-		
 	
 	
 	
-	//console.log(this.angle);
+	
+	 if(this.y<-100){
+		this.destroy();
+	 }
     }
 
 	animarNacimiento(){
@@ -58,7 +63,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 		var entrandoTimeline = this.scene.tweens.createTimeline();
 		entrandoTimeline.add({
 			targets: this,
-			alpha: 0.5,
+			scale: 0.9,
 			duration: 200,
 			yoyo:true,
 			ease: 'Linear',
@@ -72,24 +77,43 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 
 	enemyDestroy(bullet,enemy){
 		//poner sonido
-		enemy.play("explosion1",true);
-		enemy.enemy_destroy.play();	
-		enemy.body.enable=false;
-		enemy.scene.player.handleScore(enemy);
-		enemy.scene.EnemiesDestroyed++;
+		
+		bullet.destroyObjectByCollide(bullet);
+		if(this.enemyLife>0){
 	
-		bullet.particles.destroy();
-		bullet.destroy();
-		var destroyTimer = enemy.scene.time.addEvent({
-			delay: 500,                // ms
-			callback: function(){
+			this.hitAnimation = new HitAnimation(this.scene, bullet.x, bullet.y);
+			this.hitAnimation.explodeType =  Phaser.Math.Between(1, 3);
+			console.log(this.hitAnimation.explodeType);
+			this.scene.add.existing(this.hitAnimation);
+			
+			enemy.hurt.play();	
+			this.enemyLife--;
 
-				enemy.destroy();
-			},
-			//args: [],
-			callbackScope: this,
-			loop: false
-		});
+		}else{
+		
+			enemy.play("explosion1",true);
+			enemy.enemy_destroy.play();	
+			enemy.body.enable=false;
+		
+			this.probabilidadDeEnergia = Phaser.Math.Between(0, 100);
+			if(this.probabilidadDeEnergia>50){
+				const powerUp = new PowerUp(this.scene, this.x, this.y);
+				this.scene.add.existing(powerUp);
+			}
+		
+		
+			var destroyTimer = enemy.scene.time.addEvent({
+				delay: 500,                // ms
+				callback: function(){
+
+					enemy.destroy();
+				},
+				//args: [],
+				callbackScope: this,
+				loop: false
+			});
+		}
+		
 
 		
 		
@@ -97,24 +121,9 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	}
 
 	playerCollide(player,enemy){
-		enemy.play("explosion1",true);
-		enemy.enemy_destroy.play();	
-		enemy.scene.EnemiesDestroyed++;
-		enemy.body.enable=false;
-		//console.log(enemy.scene.EnemiesDestroyed);
-		var destroyTimer = enemy.scene.time.addEvent({
-		delay: 500,                // ms
-		callback: function(){
-
-			enemy.destroy();
-		},
-		//args: [],
-		callbackScope: this,
-		loop: false
-	});
-
-		player.handleEnemyCollition();
-		player.handleScore(enemy);
+		enemy.enemy_destroy2.play();	
+		player.playerLevel=1;
+		player.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
 		
 	}
 

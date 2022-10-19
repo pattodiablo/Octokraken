@@ -1,0 +1,27 @@
+{
+    "id": "3dc36af8-8a5d-41cc-908f-1031b51482f3",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "fb12d9bf-23e1-4d37-adf6-6afca96811a8",
+            "label": "berenjenaBullet",
+            "components": [],
+            "texture": {
+                "key": "berenjenaBullet"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

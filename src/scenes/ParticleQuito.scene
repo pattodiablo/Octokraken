@@ -1,0 +1,27 @@
+{
+    "id": "0ba7db40-1881-4809-82d4-d053c068a185",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "16864245-9c54-4a16-be9f-8bfdcd65f082",
+            "label": "particles",
+            "components": [],
+            "texture": {
+                "key": "particles"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

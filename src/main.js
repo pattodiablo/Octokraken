@@ -18,8 +18,8 @@ window.addEventListener('load', function () {
 	console.log("currentHeight " + currentHeight);
 
 	var game = new Phaser.Game({
-		width: 1080,
-		height:  1920,
+		width: 540,
+		height:  960,
 		type: Phaser.AUTO,
         backgroundColor: "#242424",
 		physics: {

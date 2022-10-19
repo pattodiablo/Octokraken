@@ -14,7 +14,7 @@
             "scope": "CLASS",
             "components": [],
             "texture": {
-                "key": "background"
+                "key": "backgroundKraken"
             },
             "originX": 0,
             "originY": 0,
@@ -33,6 +33,54 @@
             "components": [],
             "x": 43,
             "y": 51
+        },
+        {
+            "type": "Image",
+            "id": "e76a1222-898f-4fc9-ba4a-4eff6434d738",
+            "label": "moon",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "moon"
+            },
+            "x": 169,
+            "y": 404
+        },
+        {
+            "prefabId": "0ba7db40-1881-4809-82d4-d053c068a185",
+            "id": "cbb23b79-b5c3-473e-9c22-719df010af14",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "particles",
+            "components": [],
+            "x": 412,
+            "y": 347
+        },
+        {
+            "prefabId": "7fe5d9f0-bf59-4aa5-ae4a-50dfd71f9d2e",
+            "id": "44723ff1-0f44-4055-b1da-1a4577d83377",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "HitAnimation",
+            "components": [],
+            "x": 517,
+            "y": 340
+        },
+        {
+            "prefabId": "2304970d-9583-4493-a2f8-891de904b86e",
+            "id": "a62f0bc7-0404-48e5-97bc-e5ac9439ea38",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "powerUp",
+            "components": [],
+            "x": 434,
+            "y": 1135
         }
     ],
     "plainObjects": [],
