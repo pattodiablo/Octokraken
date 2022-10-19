@@ -2,58 +2,58 @@
 
 "firing instancia 10000":
 {
-	"frame": {"x":1,"y":1,"w":183,"h":206},
+	"frame": {"x":1,"y":1,"w":91,"h":103},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
-	"sourceSize": {"w":183,"h":206}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":103},
+	"sourceSize": {"w":91,"h":103}
 },
 "firing instancia 10001":
 {
-	"frame": {"x":185,"y":1,"w":183,"h":206},
+	"frame": {"x":93,"y":1,"w":91,"h":103},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
-	"sourceSize": {"w":183,"h":206}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":103},
+	"sourceSize": {"w":91,"h":103}
 },
 "firing instancia 10002":
 {
-	"frame": {"x":1,"y":208,"w":183,"h":206},
+	"frame": {"x":1,"y":105,"w":91,"h":103},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":206},
-	"sourceSize": {"w":183,"h":206}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":103},
+	"sourceSize": {"w":91,"h":103}
 },
 "idlePlayer instancia 10000":
 {
-	"frame": {"x":185,"y":208,"w":183,"h":201},
+	"frame": {"x":93,"y":105,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
-	"sourceSize": {"w":183,"h":201}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
+	"sourceSize": {"w":91,"h":101}
 },
 "idlePlayer instancia 10001":
 {
-	"frame": {"x":1,"y":415,"w":183,"h":201},
+	"frame": {"x":1,"y":209,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
-	"sourceSize": {"w":183,"h":201}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
+	"sourceSize": {"w":91,"h":101}
 },
 "idlePlayer instancia 10002":
 {
-	"frame": {"x":185,"y":415,"w":183,"h":201},
+	"frame": {"x":93,"y":209,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":183,"h":201},
-	"sourceSize": {"w":183,"h":201}
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
+	"sourceSize": {"w":91,"h":101}
 }},
 "meta": {
 	"app": "Adobe Animate",
 	"version": "19.2.1.408",
 	"image": "OktokrakenPlayer.png",
 	"format": "RGBA8888",
-	"size": {"w":512,"h":1024},
+	"size": {"w":256,"h":512},
 	"scale": "1"
 }
 }
