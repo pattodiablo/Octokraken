@@ -72,8 +72,8 @@ class Level extends Phaser.Scene {
 		this.physics.world.setBounds(0,0,540,960,true,true,true);
 		this.cameras.main.setBounds(0, 0, 540, 960,true);
 		this.cameras.main.startFollow(this.player);
-		this.background.width=3000;
-		this.background.height=3000;
+		this.background.width=540;
+		this.background.height=960;
 
 		this.wavesUntilKraken = 10;
 		this.currentWave=1;
@@ -89,10 +89,10 @@ class Level extends Phaser.Scene {
 
 	createPlayerEnergyBar(){
 		
-		this.lifeVisual2 = this.add.rectangle(140, 80, 800, 80, 0xEA1992,0.7);
+		this.lifeVisual2 = this.add.rectangle(70, 80, 400, 80, 0xEA1992,0.7);
 		this.lifeVisual2.setOrigin(0,0.5);
 
-		this.lifeVisual = this.add.rectangle(140, 80, 800, 80, 0xEA1992,0);
+		this.lifeVisual = this.add.rectangle(70, 80, 400, 80, 0xEA1992,0);
 		this.lifeVisual.setOrigin(0,0.5);
 		this.lifeVisual.setStrokeStyle(4, 0xffffff);
 
@@ -110,7 +110,7 @@ class Level extends Phaser.Scene {
 					this.rowsTocreate = this.enemiestoCreate/this.enemiesInRow;
 				for(var j=0; j<=this.rowsTocreate; j++){
 					for(var i=0; i<=this.enemiesInRow; i++){
-					const enemy1 = new Enemy1(this, i*150+150, 1920+j*140);
+					const enemy1 = new Enemy1(this, i*75+75, 960+j*70);
 					this.add.existing(enemy1);
 					}
 				}
@@ -136,7 +136,7 @@ class Level extends Phaser.Scene {
 	createParticlesQuito(){
 
 		for(var i=0; i<=30; i++){
-			const particles = new ParticleQuito(this, Phaser.Math.Between(10, 1070), Phaser.Math.Between(0, 1920));
+			const particles = new ParticleQuito(this, Phaser.Math.Between(10, 500), Phaser.Math.Between(0, 960));
 			this.add.existing(particles);
 
 		}

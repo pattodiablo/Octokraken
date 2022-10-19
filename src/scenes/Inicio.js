@@ -57,11 +57,11 @@ class Inicio extends Phaser.Scene {
 		this.splash_screen.play();
 
 		this.editorCreate();
-		this.jugarBtn.x=this.cameras.main.centerX+320;
+		this.jugarBtn.x=this.cameras.main.centerX+160;
 		this.jugarBtn.y=this.cameras.main.centerY+50;
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
-		this.creditos.x=this.cameras.main.centerX+320;
+		this.creditos.x=this.cameras.main.centerX+160;
 		this.creditos.y=this.cameras.main.centerY+150;
 		this.creditos.setInteractive().on('pointerup', this.mostrarCreditos,this);
 
@@ -71,7 +71,7 @@ class Inicio extends Phaser.Scene {
 
 
 		this.botonera.setScale(0.6,0.6);
-		this.botonera.x = this.cameras.main.centerX+350;
+		this.botonera.x = this.cameras.main.centerX+125;
 		this.botonera.y =  this.cameras.main.centerY+100;;
 	}
 

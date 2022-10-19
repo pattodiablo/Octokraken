@@ -13,10 +13,9 @@
             "label": "player",
             "components": [],
             "texture": {
-                "key": "playerPato"
-            },
-            "x": 418,
-            "y": 161
+                "key": "OktokrakenPlayer",
+                "frame": "idlePlayer instancia 10001"
+            }
         }
     ],
     "plainObjects": [],

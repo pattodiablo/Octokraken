@@ -121,9 +121,9 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	}
 
 	playerCollide(player,enemy){
+		player.blink();
 		enemy.enemy_destroy2.play();	
-		player.playerLevel=1;
-		player.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
+		
 		
 	}
 

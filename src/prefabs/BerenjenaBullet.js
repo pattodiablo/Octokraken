@@ -26,8 +26,8 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 		this.body.gravity.y=90;
 		this.crearParticulas();
 		this.setDepth(2);
-
-		this.scene.physics.add.overlap(this, this.scene.enemies,this.enemyDestroy);
+		this.isArmed=true;
+		this.overlapObject = this.scene.physics.add.overlap(this, this.scene.enemies,this.enemyDestroy);
 
 
 	}
@@ -51,7 +51,11 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 	}
 
 	enemyDestroy(bullet,enemy){
-		enemy.enemyDestroy(bullet,enemy);
+		if(bullet.isArmed){
+			enemy.enemyDestroy(bullet,enemy);
+			bullet.isArmed=false;
+		}
+		
 	}
 
 	destroyObjetc(){
@@ -66,14 +70,16 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 
 	destroyObjectByCollide(bullet){
 		bullet.particles.destroy();
-		bullet.body.enable=false;
 		bullet.visible=false;
+		
+		
+		//bullet.destroy();
 	}
 
 	update(){
 		
 
-		if(this.y>this.scene.cameras.main.height+200){
+		if(this.y>this.scene.cameras.main.height+100){
 		this.destroyObjetc();
 		}
 	}

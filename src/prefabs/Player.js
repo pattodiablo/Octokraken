@@ -6,7 +6,7 @@
 class Player extends Phaser.GameObjects.Sprite {
 
 	constructor(scene, x, y, texture, frame) {
-		super(scene, x ?? 418, y ?? 161, texture || "playerPato", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "OktokrakenPlayer", frame ?? "idlePlayer instancia 10001");
 
 		/* START-USER-CTR-CODE */
 		this.createEvent = this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.create, this);
@@ -17,13 +17,14 @@ class Player extends Phaser.GameObjects.Sprite {
 	/* START-USER-CODE */
 
 create(){
-	
+
 	this.laser_shot = this.scene.sound.add('laser_shot');
 	this.laser_shot.loop = false;
 
 
 	this.scene.physics.world.enableBody(this);
 	this.body.setCollideWorldBounds(true);
+
 	this.isMouseDown = false;
 	this.y=this.scene.cameras.main.height/3;
 	this.x=this.scene.cameras.main.width/2;
@@ -31,18 +32,18 @@ create(){
 	this.playerLevel=1;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
-	
+
 	this.scene.input.on('pointerdown', function (pointer) { 
 
 		this.currentMouseY = this.scene.input.y;
 		this.currentMouseX= this.scene.input.x;
-	
+
 		this.isFiring=true;
 		this.fire();
 		this.isMouseDown=true;
 
 	}, this);
-	
+
 	this.scene.input.on('pointerup', function (pointer) { 	
 		this.stopFire()
 		this.isFiring=false;
@@ -50,7 +51,7 @@ create(){
 
 	}, this);
 
-	
+
 
 		this.crearParticulas();
 		this.defaultIdleAnim();
@@ -64,6 +65,28 @@ create(){
 		this.travel = this.scene.sound.add('travel');
 		this.travel.loop = true;
 
+}
+
+blink(){
+	console.log(this)
+	this.body.enable=false;
+	this.playerLevel=1;
+	this.tint=0xC70B24;
+	var blinking = this.scene.tweens.createTimeline();
+	blinking.add({
+			targets: this,
+			alpha: 0.5,
+			duration: 100,
+			ease: 'Linear',
+			repeat: 10,
+			yoyo: true,
+			onComplete: function(){
+				this.targets[0].tint=0xffffff;
+				this.targets[0].body.enable=true;
+			}
+
+		});
+		blinking.play();
 }
 
 
@@ -118,7 +141,7 @@ fire(){
 
 					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing*2, this.y+60);
 					this.scene.add.existing(this.berenjenaBullet);
-					
+
 					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
 					this.scene.add.existing(this.berenjenaBullet);
 
@@ -143,14 +166,14 @@ fire(){
 
 					break
 			}
-		
+
 		},
 		//args: [],
 		callbackScope: this,
 		loop: true
 	});
-		
-	
+
+
 }
 
 stopFire(){
@@ -228,8 +251,8 @@ checkAnimStatus(){
 
 update(){
 	this.setTint(0xffffff);
-this.scene.lifeVisual2.width=this.currentLevelFill;
-this.checkAnimStatus();
+	this.scene.lifeVisual2.width=this.currentLevelFill;
+	this.checkAnimStatus();
 
 		if(this.isMouseDown){
 			this.yDiff=this.currentMouseY-this.scene.input.y;

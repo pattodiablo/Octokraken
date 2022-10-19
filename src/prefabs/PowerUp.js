@@ -29,7 +29,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 	powerUpFill(powerUp,player){
 		
-		if(player.currentLevelFill<800){
+		if(player.currentLevelFill<400){
 			player.currentLevelFill+=powerUp.fillPower;
 		}else{
 			if(player.playerLevel<5){
