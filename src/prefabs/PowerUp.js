@@ -25,18 +25,25 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		this.scene.physics.add.overlap(this, this.scene.player,this.powerUpFill);
 		this.shield_up = this.scene.sound.add('shield_up');
 		this.shield_up.loop = false;
+		this.isDestroyed = false;
 	}
 
 	powerUpFill(powerUp,player){
+	
 		
 		if(player.currentLevelFill<400){
+			player.scene.powerText.text="QUITO POWER " + player.playerLevel;
+	
 			player.currentLevelFill+=powerUp.fillPower;
 		}else{
-			if(player.playerLevel<5){
+			if(player.playerLevel<4){
 
 				powerUp.shield_up.play();	
 				player.playerLevel++;
 				player.currentLevelFill=0;
+			}else{
+
+				player.scene.powerText.text="QUITO MAX POWER !!" ;
 			}
 			
 		}
@@ -63,8 +70,27 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 	}
 
+
+	destroyObjetc(){
+
+		this.isDestroyed=true;
+		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
+	
+	
+		this.destroy();
+
+	}
+
 	update(){
 		this.rotation+=0.1;
+
+		if(!this.isDestroyed){
+			if(this.y<-30){
+			
+			this.destroyObjetc();
+			}
+		}
+		
 	}
 	/* END-USER-CODE */
 }

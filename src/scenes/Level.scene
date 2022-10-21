@@ -47,40 +47,30 @@
             "y": 404
         },
         {
-            "prefabId": "0ba7db40-1881-4809-82d4-d053c068a185",
-            "id": "cbb23b79-b5c3-473e-9c22-719df010af14",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "particles",
+            "type": "Text",
+            "id": "1f24955c-9680-42aa-b9ea-5c5fb84dc9ee",
+            "label": "powerText",
+            "scope": "CLASS",
             "components": [],
-            "x": 412,
-            "y": 347
+            "x": 40,
+            "y": 208,
+            "text": "PATO POWER",
+            "fontFamily": "Arial",
+            "fontSize": "26px",
+            "fontStyle": "bold"
         },
         {
-            "prefabId": "7fe5d9f0-bf59-4aa5-ae4a-50dfd71f9d2e",
-            "id": "44723ff1-0f44-4055-b1da-1a4577d83377",
+            "prefabId": "73507772-b4e4-454a-ad00-ba55507be853",
+            "id": "90352eaa-044d-4fe2-9c96-91d0e3dc2ff7",
             "unlock": [
                 "x",
                 "y"
             ],
-            "label": "HitAnimation",
+            "label": "shipShield",
+            "scope": "CLASS",
             "components": [],
-            "x": 517,
-            "y": 340
-        },
-        {
-            "prefabId": "2304970d-9583-4493-a2f8-891de904b86e",
-            "id": "a62f0bc7-0404-48e5-97bc-e5ac9439ea38",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "powerUp",
-            "components": [],
-            "x": 434,
-            "y": 1135
+            "x": 337,
+            "y": 366
         }
     ],
     "plainObjects": [],
