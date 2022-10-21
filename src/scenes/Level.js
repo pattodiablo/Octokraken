@@ -27,21 +27,20 @@ class Level extends Phaser.Scene {
 		// moon
 		const moon = this.add.image(169, 404, "moon");
 
-		// particles
-		const particles = new ParticleQuito(this, 412, 347);
-		this.add.existing(particles);
+		// powerText
+		const powerText = this.add.text(40, 208, "", {});
+		powerText.text = "PATO POWER";
+		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
-		// HitAnimation
-		const hitAnimation = new HitAnimation(this, 517, 340);
-		this.add.existing(hitAnimation);
-
-		// powerUp
-		const powerUp = new PowerUp(this, 434, 1135);
-		this.add.existing(powerUp);
+		// shipShield
+		const shipShield = new ShipShield(this, 337, 366);
+		this.add.existing(shipShield);
 
 		this.background = background;
 		this.player = player;
 		this.moon = moon;
+		this.powerText = powerText;
+		this.shipShield = shipShield;
 
 		this.events.emit("scene-awake");
 	}
@@ -52,6 +51,10 @@ class Level extends Phaser.Scene {
 	player;
 	/** @type {Phaser.GameObjects.Image} */
 	moon;
+	/** @type {Phaser.GameObjects.Text} */
+	powerText;
+	/** @type {ShipShield} */
+	shipShield;
 
 	/* START-USER-CODE */
 
@@ -65,6 +68,9 @@ class Level extends Phaser.Scene {
 		this.soundtrack01.loop = true;
 		//this.soundtrack01.play();		
 
+		this.powerText.x=80;
+		this.powerText.y=26;
+		this.powerText.depth=3;
 
 		this.moon.x=this.cameras.main.width/2;
 		this.moon.y=this.cameras.main.height/3;
@@ -77,7 +83,7 @@ class Level extends Phaser.Scene {
 
 		this.wavesUntilKraken = 10;
 		this.currentWave=1;
-		this.enemiesInRow = 5;
+		this.enemiesInRow = 4;
 
 		this.playerBullets=[];
 		this.enemies=[];
@@ -88,44 +94,73 @@ class Level extends Phaser.Scene {
 	}
 
 	createPlayerEnergyBar(){
-		
-		this.lifeVisual2 = this.add.rectangle(70, 80, 400, 80, 0xEA1992,0.7);
+
+		this.lifeVisual2 = this.add.rectangle(70, 40, 400, 40, 0xEA1992,0.7);
 		this.lifeVisual2.setOrigin(0,0.5);
 
-		this.lifeVisual = this.add.rectangle(70, 80, 400, 80, 0xEA1992,0);
+		this.lifeVisual = this.add.rectangle(70, 40, 400, 40, 0xEA1992,0);
 		this.lifeVisual.setOrigin(0,0.5);
 		this.lifeVisual.setStrokeStyle(4, 0xffffff);
+		this.lifeVisual.depth=3
 
-		
-	
+
+
 	}
 
 	createEnemies(){
 			console.log("current wave " + this.currentWave)
+
 				if(this.currentWave>this.wavesUntilKraken){
 					console.log("crear kraken");
 					this.enemyCreationTimer.destroy();
 				}else{
-					this.enemiestoCreate = this.currentWave*5;
+					this.enemiestoCreate = this.currentWave*3;
+					if(this.enemiestoCreate>=18){
+						this.enemiestoCreate=18;
+					}
 					this.rowsTocreate = this.enemiestoCreate/this.enemiesInRow;
+					console.log("rows  to create " + this.rowsTocreate )
 				for(var j=0; j<=this.rowsTocreate; j++){
 					for(var i=0; i<=this.enemiesInRow; i++){
-					const enemy1 = new Enemy1(this, i*75+75, 960+j*70);
-					this.add.existing(enemy1);
+					this.wichEnemy = Phaser.Math.Between(1, 3);
+					switch(this.wichEnemy ){
+						case 1:
+							const enemy1 = new Enemy1(this, i*90+90, 960+j*70);
+							this.add.existing(enemy1);
+						break;
+						
+						case 2:
+							const enemy2 = new Enemy2(this, i*90+90, 960+j*70);
+							this.add.existing(enemy2);
+						break;
+
+						case 3:
+							const enemy3= new Enemy3(this, i*90+90, 960+j*70);
+							this.add.existing(enemy3);
+						break;
+
+						default:
+							const enemy4= new Enemy1(this, i*90+90, 960+j*70);
+							this.add.existing(enemy4);
+						break;
+					}
+					
 					}
 				}
 				}
 
+			if(this.currentWave<11){
 
-			this.enemyCreationTimer = this.time.addEvent({
-			delay: 4000*this.currentWave,                // ms
-			callback: this.createEnemies,
-			//args: [],
-			callbackScope: this,
-			loop: false
-			});
+						this.enemyCreationTimer = this.time.addEvent({
+						delay: Phaser.Math.Between(4000, 11000),                // ms
+						callback: this.createEnemies,
+						//args: [],
+						callbackScope: this,
+						loop: false
+						});
 
-			this.currentWave++;
+						this.currentWave++;
+			}
 
 
 
@@ -144,9 +179,9 @@ class Level extends Phaser.Scene {
 
 	update (){
 
-			
-				
-		
+
+
+
 
 
 	}

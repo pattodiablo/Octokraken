@@ -16,6 +16,7 @@ class ShipShield extends Phaser.GameObjects.Sprite {
 
 	/* START-USER-CODE */
 	create(){
+		this.scene.physics.world.enableBody(this);
 		this.setDepth(this.scene.player.depth+1);
 		this.animarNacimiento();
 		this.setScale(1.2);
@@ -23,6 +24,32 @@ class ShipShield extends Phaser.GameObjects.Sprite {
 		this.shield_up = this.scene.sound.add('shield_up');
 		this.shield_up.loop = false;
 		this.shield_up.play();	
+
+		this.body.setOffset(22, 20);
+		this.body.setSize(30, 30, false);	
+	
+		this.visible=false;
+
+	}
+
+	expand(){
+
+		this.visible=true;
+		var entrandoTimeline = this.scene.tweens.createTimeline();
+		entrandoTimeline.add({
+			targets: this,
+			scale: 10,
+			duration: 200,
+			yoyo:true,
+			ease: 'Linear',
+			onComplete:function(){
+			
+				this.targets[0].visible=false;
+			},
+			repeat: 0
+	
+		});
+		entrandoTimeline.play();
 
 	}
 	update(){

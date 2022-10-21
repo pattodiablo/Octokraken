@@ -23,7 +23,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -46,6 +46,33 @@
                 {
                     "key": "OktokrakenPlayer",
                     "frame": "firing instancia 10002",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "playerHurt",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "OktokrakenPlayer",
+                    "frame": "hurt0000",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "OktokrakenPlayer",
+                    "frame": "hurt0001",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "OktokrakenPlayer",
+                    "frame": "hurt0002",
                     "duration": 0,
                     "keyframe": false
                 }

@@ -24,6 +24,9 @@ create(){
 
 	this.scene.physics.world.enableBody(this);
 	this.body.setCollideWorldBounds(true);
+	this.body.setOffset(15, 5);
+	this.body.setSize(60, 90, false);	
+	
 
 	this.isMouseDown = false;
 	this.y=this.scene.cameras.main.height/3;
@@ -32,6 +35,8 @@ create(){
 	this.playerLevel=1;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
+	this.canFire=true;
+	this.isHurt=false;
 
 	this.scene.input.on('pointerdown', function (pointer) { 
 
@@ -39,7 +44,10 @@ create(){
 		this.currentMouseX= this.scene.input.x;
 
 		this.isFiring=true;
-		this.fire();
+		if(this.canFire){
+			this.fire();
+		}
+		
 		this.isMouseDown=true;
 
 	}, this);
@@ -67,22 +75,28 @@ create(){
 
 }
 
-blink(){
-	console.log(this)
+hurtPlayer(){
+
 	this.body.enable=false;
 	this.playerLevel=1;
 	this.tint=0xC70B24;
+	this.canFire=false;
+	this.isHurt=true;
+	this.currentLevelFill = 0;
+
 	var blinking = this.scene.tweens.createTimeline();
 	blinking.add({
 			targets: this,
-			alpha: 0.5,
-			duration: 100,
+			alpha: 0.7,
+			duration: 50,
 			ease: 'Linear',
-			repeat: 10,
+			repeat: 20,
 			yoyo: true,
 			onComplete: function(){
 				this.targets[0].tint=0xffffff;
 				this.targets[0].body.enable=true;
+				this.targets[0].canFire=true;
+				this.targets[0].isHurt=false;
 			}
 
 		});
@@ -95,73 +109,104 @@ fire(){
 	this.fireClock = this.scene.time.addEvent({
 		delay: 150,                // ms
 		callback: function(){
-			this.laser_shot.play();	
+			
 			switch(this.playerLevel){
 				case 1:
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
+				
 				break;
 
 				case 2:
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
+
+				
 				break;
 
 				case 3:
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
+
+
+					
 				break;
 
 				case 4:
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing*2, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing*2, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing*2, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing*2, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
+
+					
 				break;
 
 				case 5:
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing*2, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing*2, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing*2, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing*2, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
+
+					
 				break;
 
 				default:
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+					if(this.canFire){
+						this.laser_shot.play();	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+	
+						this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
+						this.scene.add.existing(this.berenjenaBullet);
+					}
 
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x+this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
-
-					this.berenjenaBullet = new BerenjenaBullet(this.scene, this.x-this.missileSpacing, this.y+60);
-					this.scene.add.existing(this.berenjenaBullet);
+				
 
 
 					break
@@ -177,7 +222,11 @@ fire(){
 }
 
 stopFire(){
-this.fireClock.remove();
+	if(this.fireClock!=="undefined"){
+		this.fireClock.remove();
+
+	}
+
 
 }
 
@@ -240,11 +289,16 @@ crearParticulas() {
 
 checkAnimStatus(){
 
-	if(this.isFiring){
-		this.play("firePlayer", true);
+	if(this.isHurt){
+		this.play("playerHurt", true);
 	}else{
-		this.play("idlePlayer", true);
+		if(this.isFiring){
+			this.play("firePlayer", true);
+		}else{
+			this.play("idlePlayer", true);
+		}
 	}
+	
 
 }
 
@@ -254,17 +308,18 @@ update(){
 	this.scene.lifeVisual2.width=this.currentLevelFill;
 	this.checkAnimStatus();
 
-		if(this.isMouseDown){
+
+	if(!this.isHurt){
+			if(this.isMouseDown){
 			this.yDiff=this.currentMouseY-this.scene.input.y;
 			this.xDiff=this.currentMouseX-this.scene.input.x;
 			this.y-=this.yDiff/20;
-			this.x-=this.xDiff/10;
+			this.x-=this.xDiff/20;
 
-			if(this.y>this.scene.cameras.main.height/3){
-				this.y=this.scene.cameras.main.height/3;
-			}
 	}
-
+	}
+	
+	
 
 }
 

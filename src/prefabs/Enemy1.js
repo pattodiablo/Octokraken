@@ -22,7 +22,9 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 		this.scene.enemies.push(this);
 		this.body.velocity.y=-80;
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
-		this.enemyLife=3;
+		this.scene.physics.add.overlap(this.scene.shipShield, this,this.collideWithShield);
+		this.enemyLife=4;
+		this.isDestroyed = false;
 		
 		this.animarNacimiento();
 
@@ -37,15 +39,51 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 		this.hurt.loop = false;
 	}
 
-	update(){
+	collideWithShield(shield, enemy){
+		console.log("collide with shield");
+		enemy.enemyLife=0;
+		enemy.play("explosion1",true);
+		enemy.enemy_destroy.play();	
+		enemy.body.enable=false;
+
+		shield.expand();
+
+		var destroyTimer = enemy.scene.time.addEvent({
+			delay: 500,                // ms
+			callback: function(){
+
+				enemy.destroyObjetc();
+			},
+			//args: [],
+			callbackScope: this,
+			loop: false
+		});
+	
+	}
+
+
+	destroyObjetc(){
+
+		this.isDestroyed=true;
+		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
 	
 	
-	
-	
-	 if(this.y<-100){
 		this.destroy();
-	 }
-    }
+
+	}
+
+	update(){
+
+
+		if(!this.isDestroyed){
+			if(this.y<-100){
+			console.log("enemy destroyed");
+			this.destroyObjetc();
+			
+			}
+		}
+		
+	}
 
 	animarNacimiento(){
 
@@ -83,7 +121,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	
 			this.hitAnimation = new HitAnimation(this.scene, bullet.x, bullet.y);
 			this.hitAnimation.explodeType =  Phaser.Math.Between(1, 3);
-			console.log(this.hitAnimation.explodeType);
+		
 			this.scene.add.existing(this.hitAnimation);
 			
 			enemy.hurt.play();	
@@ -106,7 +144,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 				delay: 500,                // ms
 				callback: function(){
 
-					enemy.destroy();
+					enemy.destroyObjetc();
 				},
 				//args: [],
 				callbackScope: this,
@@ -121,7 +159,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	}
 
 	playerCollide(player,enemy){
-		player.blink();
+		player.hurtPlayer();
 		enemy.enemy_destroy2.play();	
 		
 		

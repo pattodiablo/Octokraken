@@ -101,21 +101,11 @@
                 "key": "Enemy3"
             },
             {
-                "url": "assets/enemy4.png",
-                "type": "image",
-                "key": "enemy4"
-            },
-            {
                 "url": [
                     "src/prefabs/Enemy4.js"
                 ],
                 "type": "scripts",
                 "key": "Enemy4"
-            },
-            {
-                "url": "assets/enemy5.png",
-                "type": "image",
-                "key": "enemy5"
             },
             {
                 "url": [
@@ -324,11 +314,6 @@
                 ],
                 "type": "audio",
                 "key": "soundtrack01"
-            },
-            {
-                "url": "assets/splash_art.png",
-                "type": "image",
-                "key": "splash_art"
             },
             {
                 "url": [

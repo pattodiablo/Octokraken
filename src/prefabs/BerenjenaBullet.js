@@ -61,9 +61,7 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 	destroyObjetc(){
 
 		this.particles.destroy();
-		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
-	
-	
+		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);	
 		this.destroy();
 
 	}
