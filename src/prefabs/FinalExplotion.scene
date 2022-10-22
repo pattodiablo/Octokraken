@@ -1,0 +1,28 @@
+{
+    "id": "45068497-3f90-451d-924a-b2ca817c9ee7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "e6f707b6-baec-4d32-8d16-b53051a2fedd",
+            "label": "explotion_instancia_10005",
+            "components": [],
+            "texture": {
+                "key": "explosion",
+                "frame": "EXP_04.png"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

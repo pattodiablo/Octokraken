@@ -71,6 +71,30 @@
             "components": [],
             "x": 337,
             "y": 366
+        },
+        {
+            "prefabId": "86ce9af4-203e-4669-bee6-2740d3e733a0",
+            "id": "7cbd47a2-4373-416a-89e0-214d9893af2c",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "kraken_instancia_10000",
+            "components": [],
+            "x": 442,
+            "y": 620
+        },
+        {
+            "type": "Sprite",
+            "id": "c9ba3e66-b79d-49d5-b10d-9868251e874a",
+            "label": "ganasteLabel",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "ganasteLabel"
+            },
+            "x": 395,
+            "y": 291
         }
     ],
     "plainObjects": [],

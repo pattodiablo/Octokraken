@@ -32,7 +32,7 @@ create(){
 	this.y=this.scene.cameras.main.height/3;
 	this.x=this.scene.cameras.main.width/2;
 	this.isFiring=false;
-	this.playerLevel=1;
+	this.playerLevel=4;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
 	this.canFire=true;

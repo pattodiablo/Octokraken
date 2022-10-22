@@ -126,6 +126,11 @@
                 "key": "explosion1"
             },
             {
+                "url": "src/prefabs/FinalExplotion.js",
+                "type": "script",
+                "key": "FinalExplotion"
+            },
+            {
                 "atlasURL": "assets/atlas/flares.json",
                 "textureURL": "assets/atlas/flares.png",
                 "type": "atlas",
@@ -142,6 +147,11 @@
                 ],
                 "type": "scripts",
                 "key": "GameOverAnimation"
+            },
+            {
+                "url": "assets/ganasteLabel.png",
+                "type": "image",
+                "key": "ganasteLabel"
             },
             {
                 "url": "assets/heart.png",
@@ -180,6 +190,11 @@
                 "key": "jugarBtn"
             },
             {
+                "url": "assets/animations/krakenAnimations.json",
+                "type": "animation",
+                "key": "krakenAnimations"
+            },
+            {
                 "url": [
                     "assets/audio/sfx/laser_shot.mp3"
                 ],
@@ -195,6 +210,11 @@
                 "url": "assets/moon.png",
                 "type": "image",
                 "key": "moon"
+            },
+            {
+                "url": "src/prefabs/Oktokraken.js",
+                "type": "script",
+                "key": "Oktokraken"
             },
             {
                 "atlasURL": "assets/atlas/OktokrakenPlayer.json",

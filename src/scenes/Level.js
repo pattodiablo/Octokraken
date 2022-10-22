@@ -36,11 +36,19 @@ class Level extends Phaser.Scene {
 		const shipShield = new ShipShield(this, 337, 366);
 		this.add.existing(shipShield);
 
+		// kraken_instancia_10000
+		const kraken_instancia_10000 = new Oktokraken(this, 442, 620);
+		this.add.existing(kraken_instancia_10000);
+
+		// ganasteLabel
+		const ganasteLabel = this.add.sprite(395, 291, "ganasteLabel");
+
 		this.background = background;
 		this.player = player;
 		this.moon = moon;
 		this.powerText = powerText;
 		this.shipShield = shipShield;
+		this.ganasteLabel = ganasteLabel;
 
 		this.events.emit("scene-awake");
 	}
@@ -55,6 +63,8 @@ class Level extends Phaser.Scene {
 	powerText;
 	/** @type {ShipShield} */
 	shipShield;
+	/** @type {Phaser.GameObjects.Sprite} */
+	ganasteLabel;
 
 	/* START-USER-CODE */
 
@@ -81,15 +91,47 @@ class Level extends Phaser.Scene {
 		this.background.width=540;
 		this.background.height=960;
 
+		this.ganasteLabel.x=this.scene.scene.cameras.main.width/2;
+		this.ganasteLabel.y=this.scene.scene.cameras.main.height/2;
+		this.ganasteLabel.visible=false;
+		this.ganasteLabel.setScale(0.1);
+
 		this.wavesUntilKraken = 10;
 		this.currentWave=1;
 		this.enemiesInRow = 4;
 
 		this.playerBullets=[];
 		this.enemies=[];
+		this.mainEnemy=[];
 		this.createParticlesQuito();
-		this.createEnemies();
+		//this.createEnemies();
 		this.createPlayerEnergyBar();
+
+
+
+	}
+
+	ganaste(){
+		
+		this.ganasteLabel.visible=true;
+
+		entrandoTimeline.add({
+			targets: this.ganasteLabel,
+		
+			scale: 1,
+			duration: 200,
+			ease: 'Linear',
+			repeat: 0,
+			callbackScope: this,
+			onComplete: function () {
+
+				
+
+			}
+
+		});
+
+		entrandoTimeline.play();
 
 	}
 
@@ -128,7 +170,7 @@ class Level extends Phaser.Scene {
 							const enemy1 = new Enemy1(this, i*90+90, 960+j*70);
 							this.add.existing(enemy1);
 						break;
-						
+
 						case 2:
 							const enemy2 = new Enemy2(this, i*90+90, 960+j*70);
 							this.add.existing(enemy2);
@@ -144,7 +186,7 @@ class Level extends Phaser.Scene {
 							this.add.existing(enemy4);
 						break;
 					}
-					
+
 					}
 				}
 				}
