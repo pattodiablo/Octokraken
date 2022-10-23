@@ -20,20 +20,42 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 		this.scene.physics.world.enableBody(this);
 		this.x=this.scene.cameras.main.width/2;
-		this.y=this.scene.cameras.main.height;
+		this.y=this.scene.cameras.main.height+300;
 		this.animarNacimiento();
 		this.isIdle = true;
-		this.enemyLife=30;
-
+		this.enemyLife=200;
+		this.fullEnemyLife = this.enemyLife;
+		this.largodeBarra = 400;
+		this.enemyValue = 500;
 		this.body.setOffset(110, 80);
 		this.body.setSize(120, 170, false);	
+		//this.aparecer();
+	
+		this.setDepth(1);
 
-		this.aparecer();
+	}
+
+	createBullets(){
+
+		this.crearBullet = this.scene.time.addEvent({
+			delay: 1500,                // ms
+			callback: function(){
+				
+				const krakenBullet = new KrakenBullet(this.scene, this.x, this.y);
+				this.scene.add.existing(krakenBullet);
+			},
+	
+			//args: [],
+			callbackScope: this,
+			repeat: -1
+		});
+		
 
 	}
 
 	desaparecer(){
 		this.moveTimer.destroy();
+		this.crearBullet.destroy();
 		
 		var saliendoTimeline = this.scene.tweens.createTimeline();
 		saliendoTimeline.add({
@@ -55,7 +77,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.finalExplotionTimer = this.scene.time.addEvent({
 			delay: 100,                // ms
 			callback: function(){
-				console.log("explotando")
+				
 				this.whereX = Phaser.Math.Between(100, 400);
 				this.whereY = Phaser.Math.Between(50, 960);
 				this.FinalExplotion = new FinalExplotion(this.scene, this.whereX , this.whereY);
@@ -92,6 +114,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 				this.createKrakenEnergyBar();
 				this.scene.mainEnemy.push(this);
 				this.moverLateralmente();
+				this.createBullets();
 			},
 			onCompleteScope:this,
 			ease: 'Linear',
@@ -149,10 +172,10 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 	createKrakenEnergyBar(){
 
-		this.krakenVisual = this.scene.add.rectangle(70, 900, 400, 40, 0xEA1992,0.7);
+		this.krakenVisual = this.scene.add.rectangle(70, 900, this.largodeBarra, 40, 0xEA1992,0.7);
 		this.krakenVisual.setOrigin(0,0.5);
 
-		this.krakenVisual2 = this.scene.add.rectangle(70, 900, 400, 40, 0xEA1992,0);
+		this.krakenVisual2 = this.scene.add.rectangle(70, 900, this.largodeBarra, 40, 0xEA1992,0);
 		this.krakenVisual2.setOrigin(0,0.5);
 		this.krakenVisual2.setStrokeStyle(4, 0xffffff);
 		this.krakenVisual2.depth=3
@@ -163,6 +186,8 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 	destroyObjetc(){
 
+		
+		
 		this.isDestroyed=true;
 		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
 
@@ -173,8 +198,9 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 
 	enemyDestroy(bullet,enemy){
+		
 		enemy.setTint("0xD93030");
-	this.Tintimer = this.scene.time.addEvent({
+		this.Tintimer = this.scene.time.addEvent({
 			delay: 50,                // ms
 			callback: function(){
 				enemy.setTint("0xffffff");
@@ -192,6 +218,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		bullet.destroyObjectByCollide(bullet);
 		if(this.enemyLife>0){
 
+			
 			this.hitAnimation = new HitAnimation(this.scene, bullet.x, bullet.y);
 			this.hitAnimation.explodeType =  Phaser.Math.Between(1, 3);
 
@@ -199,15 +226,18 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 		
 			this.enemyLife--;
+			enemy.krakenVisual.width=(this.largodeBarra*this.enemyLife)/this.fullEnemyLife;
+			
 
 		}else{
 
 			this.body.enable=false;
+			this.scene.score +=this.enemyValue;
 			this.desaparecer();
 			this.finalExplotionTimer = this.scene.time.addEvent({
 				delay: 300,                // ms
 				callback: function(){
-					console.log("explotando")
+				
 					this.whereX = Phaser.Math.Between(100, 400);
 					this.whereY = Phaser.Math.Between(800, 960);
 					this.FinalExplotion = new FinalExplotion(this.scene, this.whereX , this.whereY);

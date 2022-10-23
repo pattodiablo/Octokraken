@@ -195,6 +195,16 @@
                 "key": "krakenAnimations"
             },
             {
+                "url": "assets/krakenBullet.png",
+                "type": "image",
+                "key": "krakenBullet"
+            },
+            {
+                "url": "src/prefabs/KrakenBullet.js",
+                "type": "script",
+                "key": "KrakenBullet"
+            },
+            {
                 "url": [
                     "assets/audio/sfx/laser_shot.mp3"
                 ],

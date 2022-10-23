@@ -25,6 +25,7 @@ class Enemy2 extends Phaser.GameObjects.Sprite {
 		this.scene.physics.add.overlap(this.scene.shipShield, this,this.collideWithShield);
 		this.enemyLife=5;
 		this.isDestroyed = false;
+		this.enemyValue = 100;
 		
 		this.animarNacimiento();
 
@@ -64,6 +65,8 @@ class Enemy2 extends Phaser.GameObjects.Sprite {
 
 	destroyObjetc(){
 
+		
+		this.scene.score +=this.enemyValue;
 		this.isDestroyed=true;
 		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
 	

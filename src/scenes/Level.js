@@ -36,19 +36,26 @@ class Level extends Phaser.Scene {
 		const shipShield = new ShipShield(this, 337, 366);
 		this.add.existing(shipShield);
 
-		// kraken_instancia_10000
-		const kraken_instancia_10000 = new Oktokraken(this, 442, 620);
-		this.add.existing(kraken_instancia_10000);
+		// kraken
+		const kraken = new Oktokraken(this, 442, 620);
+		this.add.existing(kraken);
 
 		// ganasteLabel
 		const ganasteLabel = this.add.sprite(395, 291, "ganasteLabel");
+
+		// scoreText
+		const scoreText = this.add.text(313, 148, "", {});
+		scoreText.text = "00000\n";
+		scoreText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
 
 		this.background = background;
 		this.player = player;
 		this.moon = moon;
 		this.powerText = powerText;
 		this.shipShield = shipShield;
+		this.kraken = kraken;
 		this.ganasteLabel = ganasteLabel;
+		this.scoreText = scoreText;
 
 		this.events.emit("scene-awake");
 	}
@@ -63,8 +70,12 @@ class Level extends Phaser.Scene {
 	powerText;
 	/** @type {ShipShield} */
 	shipShield;
+	/** @type {Oktokraken} */
+	kraken;
 	/** @type {Phaser.GameObjects.Sprite} */
 	ganasteLabel;
+	/** @type {Phaser.GameObjects.Text} */
+	scoreText;
 
 	/* START-USER-CODE */
 
@@ -96,6 +107,11 @@ class Level extends Phaser.Scene {
 		this.ganasteLabel.visible=false;
 		this.ganasteLabel.setScale(0.1);
 
+		this.scoreText.x=this.scene.scene.cameras.main.width/2;
+		this.scoreText.y=100;
+		this.scoreText.setOrigin(0.5,0.5);
+		this.score=0;
+
 		this.wavesUntilKraken = 10;
 		this.currentWave=1;
 		this.enemiesInRow = 4;
@@ -104,7 +120,7 @@ class Level extends Phaser.Scene {
 		this.enemies=[];
 		this.mainEnemy=[];
 		this.createParticlesQuito();
-		//this.createEnemies();
+		this.createEnemies();
 		this.createPlayerEnergyBar();
 
 
@@ -112,26 +128,21 @@ class Level extends Phaser.Scene {
 	}
 
 	ganaste(){
-		
+
 		this.ganasteLabel.visible=true;
 
-		entrandoTimeline.add({
+		this.player.stopPlay();
+		this.tweens.add({
 			targets: this.ganasteLabel,
-		
 			scale: 1,
 			duration: 200,
-			ease: 'Linear',
+			ease: 'Bounce',
 			repeat: 0,
-			callbackScope: this,
-			onComplete: function () {
-
-				
-
-			}
-
 		});
 
-		entrandoTimeline.play();
+
+
+
 
 	}
 
@@ -154,6 +165,7 @@ class Level extends Phaser.Scene {
 
 				if(this.currentWave>this.wavesUntilKraken){
 					console.log("crear kraken");
+					this.kraken.aparecer();
 					this.enemyCreationTimer.destroy();
 				}else{
 					this.enemiestoCreate = this.currentWave*3;
@@ -222,7 +234,7 @@ class Level extends Phaser.Scene {
 	update (){
 
 
-
+		this.scoreText.text = this.score;
 
 
 

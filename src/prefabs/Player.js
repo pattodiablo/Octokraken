@@ -32,11 +32,12 @@ create(){
 	this.y=this.scene.cameras.main.height/3;
 	this.x=this.scene.cameras.main.width/2;
 	this.isFiring=false;
-	this.playerLevel=4;
+	this.playerLevel=1;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
 	this.canFire=true;
 	this.isHurt=false;
+	this.canPlay = true;
 
 	this.scene.input.on('pointerdown', function (pointer) { 
 
@@ -72,6 +73,41 @@ create(){
 
 		this.travel = this.scene.sound.add('travel');
 		this.travel.loop = true;
+
+}
+
+stopPlay(){
+
+	this.body.enable=false;
+	this.canFire=false;
+	this.canPlay=false;
+	this.desaparecer();
+}
+
+
+collideKrakenBullet(){
+	console.log("is playerhurt")
+	this.isHurt=true;
+
+}
+
+
+desaparecer(){
+
+	var desaparecer = this.scene.tweens.createTimeline();
+	desaparecer.add({
+			targets: this,
+			y: -100,
+			duration: 500,
+			ease: 'Linear',
+			
+			
+			onComplete: function(){
+				
+			}
+
+		});
+		desaparecer.play();
 
 }
 
@@ -311,10 +347,13 @@ update(){
 
 	if(!this.isHurt){
 			if(this.isMouseDown){
-			this.yDiff=this.currentMouseY-this.scene.input.y;
-			this.xDiff=this.currentMouseX-this.scene.input.x;
-			this.y-=this.yDiff/20;
-			this.x-=this.xDiff/20;
+				if(this.canPlay){
+					this.yDiff=this.currentMouseY-this.scene.input.y;
+					this.xDiff=this.currentMouseX-this.scene.input.x;
+					this.y-=this.yDiff/20;
+					this.x-=this.xDiff/20;
+				}
+			
 
 	}
 	}

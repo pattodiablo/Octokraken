@@ -79,7 +79,8 @@
                 "x",
                 "y"
             ],
-            "label": "kraken_instancia_10000",
+            "label": "kraken",
+            "scope": "PUBLIC",
             "components": [],
             "x": 442,
             "y": 620
@@ -95,6 +96,19 @@
             },
             "x": 395,
             "y": 291
+        },
+        {
+            "type": "Text",
+            "id": "47a9b53e-6d7f-4f9b-80b3-bea0e64855de",
+            "label": "scoreText",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 313,
+            "y": 148,
+            "text": "00000\n",
+            "fontFamily": "Arial",
+            "fontSize": "36px",
+            "fontStyle": "bold"
         }
     ],
     "plainObjects": [],
