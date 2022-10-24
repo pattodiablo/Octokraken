@@ -57,6 +57,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.moveTimer.destroy();
 		this.crearBullet.destroy();
 		this.scene.crearPowerUps.destroy();
+		this.scene.attackTimer.destroy()
 		
 		var saliendoTimeline = this.scene.tweens.createTimeline();
 		saliendoTimeline.add({
