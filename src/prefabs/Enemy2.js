@@ -23,7 +23,7 @@ class Enemy2 extends Phaser.GameObjects.Sprite {
 		this.body.velocity.y=-80;
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
 	
-		this.enemyLife=5;
+		this.enemyLife=3;
 		this.isDestroyed = false;
 		this.enemyValue = 100;
 		
