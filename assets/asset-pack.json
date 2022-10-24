@@ -420,13 +420,6 @@
             },
             {
                 "url": [
-                    "assets/audio/music/soundtrack01.mp3"
-                ],
-                "type": "audio",
-                "key": "soundtrack01"
-            },
-            {
-                "url": [
                     "assets/audio/music/splash_screen.mp3"
                 ],
                 "type": "audio",
