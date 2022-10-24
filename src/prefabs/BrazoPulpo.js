@@ -27,7 +27,8 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 		this.showAlert();
 	}
 
-	playerCollide(player){
+	playerCollide(player,brazo){
+		brazo.body.enable=false;
 		player.hurtPlayer();
 	
 		
