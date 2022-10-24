@@ -51,6 +51,8 @@ class Inicio extends Phaser.Scene {
 	// Write your code here
 
 	create() {
+		
+
 
 		this.splash_screen = this.sound.add('splash_screen');
 		this.splash_screen.loop = false;
@@ -58,7 +60,8 @@ class Inicio extends Phaser.Scene {
 
 		this.editorCreate();
 		this.jugarBtn.x=this.cameras.main.centerX;
-		this.jugarBtn.y=this.cameras.main.centerY+340;
+		this.jugarBtn.y=this.cameras.main.height+100;
+		
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
 		this.patoTitle.x=this.cameras.main.centerX;
@@ -70,8 +73,24 @@ class Inicio extends Phaser.Scene {
 		this.background.width=3000;
 		this.background.height=3000;
 
+		this.background.setInteractive().on('pointerup', this.onFocus,this);
+
 		this.animateStuff();
 
+	}
+
+	onFocus(){
+		var showBtn = this.tweens.createTimeline();
+		showBtn.add({
+			targets: this.jugarBtn,
+			y: this.cameras.main.centerY+340,
+			duration: 300,
+			ease: 'Linear',
+		
+			repeat: 0
+
+		});
+		showBtn.play();
 	}
 
 	animateStuff(){
