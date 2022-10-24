@@ -55,10 +55,14 @@ class Level extends Phaser.Scene {
 		const messageWindow = this.add.image(88, 548, "messageWindow");
 
 		// mensaje1
-		const mensaje1 = this.add.image(462, 589, "mensaje1");
+		const mensaje1 = new MensajeRandom(this, 462, 589);
+		this.add.existing(mensaje1);
 
 		// onLogo
 		const onLogo = this.add.image(665, 538, "onLogo");
+
+		// jugarBtn
+		const jugarBtn = this.add.image(371, 726, "jugarBtn");
 
 		this.background = background;
 		this.player = player;
@@ -72,6 +76,7 @@ class Level extends Phaser.Scene {
 		this.messageWindow = messageWindow;
 		this.mensaje1 = mensaje1;
 		this.onLogo = onLogo;
+		this.jugarBtn = jugarBtn;
 
 		this.events.emit("scene-awake");
 	}
@@ -96,10 +101,12 @@ class Level extends Phaser.Scene {
 	alertHalo;
 	/** @type {Phaser.GameObjects.Image} */
 	messageWindow;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {MensajeRandom} */
 	mensaje1;
 	/** @type {Phaser.GameObjects.Image} */
 	onLogo;
+	/** @type {Phaser.GameObjects.Image} */
+	jugarBtn;
 
 	/* START-USER-CODE */
 
@@ -164,6 +171,10 @@ class Level extends Phaser.Scene {
 
 		this.canAttackPulpo=true;
 
+		this.jugarBtn.x=this.scene.scene.cameras.main.width/2;
+		this.jugarBtn.visible=false;
+		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
+
 		this.playerBullets=[];
 		this.enemies=[];
 		this.mainEnemy=[];
@@ -171,9 +182,13 @@ class Level extends Phaser.Scene {
 		this.createEnemies();
 		this.createPlayerEnergyBar();
 
-
+		//this.ganaste();
 		this.generateRandomPulpoAttack();
 		this.showLogoSometimes();
+	}
+
+	iniciarJuego(){
+		location.reload(true);
 	}
 
 	showLogoSometimes(){
@@ -241,6 +256,7 @@ class Level extends Phaser.Scene {
 		this.alertHalo.visible=true;
 		this.messageWindow.visible=true;
 		this.mensaje1.visible=true;
+		this.mensaje1.generarMensaje();
 
 		this.tweens.add({
 			targets: this.alertHalo,
@@ -330,6 +346,16 @@ class Level extends Phaser.Scene {
 
 	ganaste(){
 
+		this.jugarBtn.visible=true;
+
+		this.tweens.add({
+			targets: this.jugarBtn,
+			scale: 0.9,
+			duration: 500,
+			ease: 'Bounce',
+			repeat: 0,
+		});
+
 		this.ganasteLabel.visible=true;
 
 		this.player.stopPlay();
@@ -337,6 +363,15 @@ class Level extends Phaser.Scene {
 			targets: this.ganasteLabel,
 			scale: 1,
 			duration: 200,
+			ease: 'Bounce',
+			repeat: 0,
+		});
+
+		this.tweens.add({
+			targets: this.scoreText,
+			scale: 2,
+			y:120,
+			duration: 500,
 			ease: 'Bounce',
 			repeat: 0,
 		});

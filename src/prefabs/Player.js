@@ -114,11 +114,17 @@ desaparecer(){
 hurtPlayer(){
 
 	//this.body.enable=false;
-	this.playerLevel=1;
+	this.playerLevel--;
+	if(this.playerLevel<=1){
+		this.playerLevel=1;	
+	}
 	this.tint=0xC70B24;
 	this.canFire=false;
 	this.isHurt=true;
 	this.currentLevelFill = 0;
+
+	this.FinalExplotion = new FinalExplotion(this.scene, this.x , this.y);
+				this.scene.add.existing(this.FinalExplotion);
 
 	var blinking = this.scene.tweens.createTimeline();
 	blinking.add({
@@ -129,6 +135,7 @@ hurtPlayer(){
 			repeat: 20,
 			yoyo: true,
 			onComplete: function(){
+				this.alpha=1;
 				this.targets[0].tint=0xffffff;
 				this.targets[0].body.enable=true;
 				this.targets[0].canFire=true;

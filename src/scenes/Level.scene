@@ -133,14 +133,15 @@
             "y": 548
         },
         {
-            "type": "Image",
+            "prefabId": "27228d52-82e2-453a-9e25-2cae123222c0",
             "id": "2f4e3527-b0ca-4e74-aea6-27d1f7194665",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "mensaje1",
             "scope": "PUBLIC",
             "components": [],
-            "texture": {
-                "key": "mensaje1"
-            },
             "x": 462,
             "y": 589
         },
@@ -155,6 +156,18 @@
             },
             "x": 665,
             "y": 538
+        },
+        {
+            "type": "Image",
+            "id": "08dac3d9-e880-466f-8998-61795ff30440",
+            "label": "jugarBtn",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "jugarBtn"
+            },
+            "x": 371,
+            "y": 726
         }
     ],
     "plainObjects": [],

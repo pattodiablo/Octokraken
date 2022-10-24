@@ -247,6 +247,36 @@
                 "key": "mensaje1"
             },
             {
+                "url": "assets/mensaje2.png",
+                "type": "image",
+                "key": "mensaje2"
+            },
+            {
+                "url": "assets/mensaje3.png",
+                "type": "image",
+                "key": "mensaje3"
+            },
+            {
+                "url": "assets/mensaje4.png",
+                "type": "image",
+                "key": "mensaje4"
+            },
+            {
+                "url": "assets/mensaje5.png",
+                "type": "image",
+                "key": "mensaje5"
+            },
+            {
+                "url": "assets/mensaje6.png",
+                "type": "image",
+                "key": "mensaje6"
+            },
+            {
+                "url": "src/prefabs/MensajeRandom.js",
+                "type": "script",
+                "key": "MensajeRandom"
+            },
+            {
                 "url": "assets/messageWindow.png",
                 "type": "image",
                 "key": "messageWindow"

@@ -18,6 +18,7 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 
 		this.visible=false;
 		this.scene.physics.world.enableBody(this);
+		this.body.enable=false;
 		this.alertStripe = this.scene.add.sprite(this.x, this.scene.cameras.main.height, "alertStripe");
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
 		this.alertStripe.setOrigin(0.5,1);
@@ -80,6 +81,11 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 			y: 40,
 			duration: 100,
 			ease: 'BounceIn',
+			onComplete:function(){
+
+				this.body.enable=true;
+			},
+			onCompleteScope:this,
 			repeat: 0
 
 		});
@@ -88,7 +94,7 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 			y: 60,
 			duration: 300,
 			ease: 'BounceIn',
-		
+			
 			yoyo:true,
 		
 			repeat: 3
@@ -103,6 +109,7 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 			onComplete:function(){
 
 				this.scene.canAttackPulpo=true;
+				this.body.enable=false;
 			},
 			onCompleteScope:this,
 
