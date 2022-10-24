@@ -282,6 +282,13 @@
                 "key": "messageWindow"
             },
             {
+                "url": [
+                    "assets/audio/music/misterio.mp3"
+                ],
+                "type": "audio",
+                "key": "misterio"
+            },
+            {
                 "url": "assets/moon.png",
                 "type": "image",
                 "key": "moon"
