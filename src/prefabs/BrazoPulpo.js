@@ -19,10 +19,17 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 		this.visible=false;
 		this.scene.physics.world.enableBody(this);
 		this.alertStripe = this.scene.add.sprite(this.x, this.scene.cameras.main.height, "alertStripe");
+		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
 		this.alertStripe.setOrigin(0.5,1);
 		this.alertStripe.setScale(0,0);
 		this.setOrigin(0.5,0)
 		this.showAlert();
+	}
+
+	playerCollide(player){
+		player.hurtPlayer();
+	
+		
 	}
 
 	showAlert(){
