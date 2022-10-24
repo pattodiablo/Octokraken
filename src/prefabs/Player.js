@@ -123,6 +123,9 @@ hurtPlayer(){
 	this.isHurt=true;
 	this.currentLevelFill = 0;
 
+	this.FinalExplotion = new FinalExplotion(this.scene, this.x , this.y);
+				this.scene.add.existing(this.FinalExplotion);
+
 	var blinking = this.scene.tweens.createTimeline();
 	blinking.add({
 			targets: this,

@@ -156,6 +156,18 @@
             },
             "x": 665,
             "y": 538
+        },
+        {
+            "type": "Image",
+            "id": "08dac3d9-e880-466f-8998-61795ff30440",
+            "label": "jugarBtn",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "jugarBtn"
+            },
+            "x": 371,
+            "y": 726
         }
     ],
     "plainObjects": [],

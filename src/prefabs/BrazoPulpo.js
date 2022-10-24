@@ -81,6 +81,11 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 			y: 40,
 			duration: 100,
 			ease: 'BounceIn',
+			onComplete:function(){
+
+				this.body.enable=true;
+			},
+			onCompleteScope:this,
 			repeat: 0
 
 		});
@@ -89,11 +94,7 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 			y: 60,
 			duration: 300,
 			ease: 'BounceIn',
-			onComplete:function(){
-
-				this.body.enable=true;
-			},
-			onCompleteScope:this,
+			
 			yoyo:true,
 		
 			repeat: 3
