@@ -74,34 +74,34 @@
 },
 "kraken instancia 10000":
 {
-	"frame": {"x":1,"y":105,"w":335,"h":321},
+	"frame": {"x":1,"y":105,"w":346,"h":322},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":335,"h":321},
-	"sourceSize": {"w":335,"h":321}
+	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
+	"sourceSize": {"w":346,"h":322}
 },
 "kraken instancia 10001":
 {
-	"frame": {"x":337,"y":105,"w":335,"h":321},
+	"frame": {"x":348,"y":105,"w":346,"h":322},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":335,"h":321},
-	"sourceSize": {"w":335,"h":321}
+	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
+	"sourceSize": {"w":346,"h":322}
 },
 "kraken instancia 10002":
 {
-	"frame": {"x":673,"y":105,"w":335,"h":321},
+	"frame": {"x":1,"y":428,"w":346,"h":322},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":335,"h":321},
-	"sourceSize": {"w":335,"h":321}
+	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
+	"sourceSize": {"w":346,"h":322}
 }},
 "meta": {
 	"app": "Adobe Animate",
 	"version": "19.2.1.408",
 	"image": "OktokrakenPlayer.png",
 	"format": "RGBA8888",
-	"size": {"w":1024,"h":512},
+	"size": {"w":1024,"h":1024},
 	"scale": "1"
 }
 }
