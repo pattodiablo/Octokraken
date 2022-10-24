@@ -22,7 +22,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 		this.scene.enemies.push(this);
 		this.body.velocity.y=-80;
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
-		this.scene.physics.add.overlap(this.scene.shipShield, this,this.collideWithShield);
+		
 		this.enemyLife=4;
 		this.isDestroyed = false;
 		this.enemyValue = 80;
@@ -41,7 +41,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	}
 
 	collideWithShield(shield, enemy){
-		console.log("collide with shield");
+	
 		enemy.enemyLife=0;
 		enemy.play("explosion1",true);
 		enemy.enemy_destroy.play();	
@@ -164,7 +164,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	playerCollide(player,enemy){
 		player.hurtPlayer();
 		enemy.enemy_destroy2.play();	
-		
+		enemy.collideWithShield(enemy.scene.shipShield,enemy);
 		
 	}
 

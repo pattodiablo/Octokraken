@@ -48,6 +48,18 @@ class Level extends Phaser.Scene {
 		scoreText.text = "00000\n";
 		scoreText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
 
+		// alertHalo
+		const alertHalo = this.add.image(0, 0, "alertHalo");
+
+		// messageWindow
+		const messageWindow = this.add.image(88, 548, "messageWindow");
+
+		// mensaje1
+		const mensaje1 = this.add.image(462, 589, "mensaje1");
+
+		// onLogo
+		const onLogo = this.add.image(665, 538, "onLogo");
+
 		this.background = background;
 		this.player = player;
 		this.moon = moon;
@@ -56,6 +68,10 @@ class Level extends Phaser.Scene {
 		this.kraken = kraken;
 		this.ganasteLabel = ganasteLabel;
 		this.scoreText = scoreText;
+		this.alertHalo = alertHalo;
+		this.messageWindow = messageWindow;
+		this.mensaje1 = mensaje1;
+		this.onLogo = onLogo;
 
 		this.events.emit("scene-awake");
 	}
@@ -76,6 +92,14 @@ class Level extends Phaser.Scene {
 	ganasteLabel;
 	/** @type {Phaser.GameObjects.Text} */
 	scoreText;
+	/** @type {Phaser.GameObjects.Image} */
+	alertHalo;
+	/** @type {Phaser.GameObjects.Image} */
+	messageWindow;
+	/** @type {Phaser.GameObjects.Image} */
+	mensaje1;
+	/** @type {Phaser.GameObjects.Image} */
+	onLogo;
 
 	/* START-USER-CODE */
 
@@ -96,6 +120,10 @@ class Level extends Phaser.Scene {
 		this.moon.x=this.cameras.main.width/2;
 		this.moon.y=this.cameras.main.height/3;
 
+		this.onLogo.x=this.moon.x;
+		this.onLogo.y=this.moon.y;
+		this.onLogo.visible=false;
+
 		this.physics.world.setBounds(0,0,540,960,true,true,true);
 		this.cameras.main.setBounds(0, 0, 540, 960,true);
 		this.cameras.main.startFollow(this.player);
@@ -106,6 +134,7 @@ class Level extends Phaser.Scene {
 		this.ganasteLabel.y=this.scene.scene.cameras.main.height/2;
 		this.ganasteLabel.visible=false;
 		this.ganasteLabel.setScale(0.1);
+		this.ganasteLabel.setDepth(3);
 
 		this.scoreText.x=this.scene.scene.cameras.main.width/2;
 		this.scoreText.y=100;
@@ -116,6 +145,25 @@ class Level extends Phaser.Scene {
 		this.currentWave=1;
 		this.enemiesInRow = 4;
 
+		this.alertHalo.x = this.scene.scene.cameras.main.width/2;
+		this.alertHalo.y =this.scene.scene.cameras.main.height/2;
+		this.alertHalo.visible=false;
+
+
+
+		this.messageWindow.x = this.scene.scene.cameras.main.width/2;
+		this.messageWindow.y =-this.scene.scene.cameras.main.height;
+		this.messageWindow.visible=false;
+		this.messageWindow.setDepth(2);
+
+		this.mensaje1.x = this.scene.scene.cameras.main.width/2;
+		this.mensaje1.y =this.scene.scene.cameras.main.height/2;
+		this.mensaje1.visible=false;
+		this.mensaje1.scale=0.1;
+		this.mensaje1.setDepth(2);
+
+		this.canAttackPulpo=true;
+
 		this.playerBullets=[];
 		this.enemies=[];
 		this.mainEnemy=[];
@@ -124,6 +172,159 @@ class Level extends Phaser.Scene {
 		this.createPlayerEnergyBar();
 
 
+		this.generateRandomPulpoAttack();
+		this.showLogoSometimes();
+	}
+
+	showLogoSometimes(){
+		this.showLogoTimer = this.time.addEvent({
+			delay: 4000,                // ms
+			callback: function(){
+				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
+				console.log(this.probabilidadATTACK)
+				if(this.probabilidadATTACK>15){
+					if(!this.onLogo.visible){
+						this.onLogo.visible=true;
+					}else{
+						this.onLogo.visible=false;
+					}
+
+				}
+			},
+			//args: [],
+			callbackScope: this,
+			loop: true
+		});
+	}
+
+	generateRandomPulpoAttack(){
+
+		this.tweens.add({
+			targets: this.onLogo,
+			alpha: 0.7,
+			yoyo:true,
+			duration: 250,
+			ease: 'Bounce',
+
+			onCompleteScope:this,
+			repeat: -1,
+		});
+		this.attackTimer = this.time.addEvent({
+			delay: 4000,                // ms
+			callback: function(){
+				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
+				console.log(this.probabilidadATTACK)
+				if(this.probabilidadATTACK>15){
+					if(this.canAttackPulpo){
+						this.generarPulpoAttack();
+						this.canAttackPulpo=false;
+					}
+
+				}
+			},
+			//args: [],
+			callbackScope: this,
+			loop: true
+		});
+
+
+	}
+
+	generarPulpoAttack(){
+
+		this.alertHaloEnabled();
+
+
+	}
+
+	alertHaloEnabled(){
+		this.alertHalo.visible=true;
+		this.messageWindow.visible=true;
+		this.mensaje1.visible=true;
+
+		this.tweens.add({
+			targets: this.alertHalo,
+			scale: 1.3,
+			yoyo:true,
+			duration: 250,
+			ease: 'Bounce',
+			onComplete: function(){
+				this.alertHalo.visible=false;
+			},
+			onCompleteScope:this,
+			repeat: 5,
+		});
+
+		var textoMensaje = this.tweens.createTimeline();
+		textoMensaje.add({
+			targets: this.mensaje1,
+			scale:1,
+			duration: 100,
+			ease: 'BounceIn',
+			repeat: 0,
+			callbackScope: this,
+
+		});
+		textoMensaje.add({
+			targets: this.mensaje1,
+			scale:0.8,
+			duration: 300,
+			ease: 'BounceIn',
+			repeat: 4,
+			yoyo:true,
+			callbackScope: this,
+
+		});
+		textoMensaje.add({
+			targets: this.mensaje1,
+			scale:0.1,
+			duration: 200,
+			ease: 'BounceOut',
+			repeat: 0,
+
+			onComplete:function(){
+				this.mensaje1.visible=false
+				const brazoPulpo = new BrazoPulpo(this, Phaser.Math.Between(50,500), 474);
+				this.add.existing(brazoPulpo);
+			},
+			callbackScope: this,
+
+		});
+
+		textoMensaje.play();
+
+		var ventanaMensaje = this.tweens.createTimeline();
+		ventanaMensaje.add({
+			targets: this.messageWindow,
+			y: this.scene.scene.cameras.main.height/2,
+			duration: 300,
+			ease: 'BounceIn',
+			repeat: 0,
+			callbackScope: this,
+
+		});
+
+		ventanaMensaje.add({
+			targets: this.messageWindow,
+			y: this.scene.scene.cameras.main.height/2,
+			duration: 3000,
+			ease: 'Linear',
+			repeat: 0,
+			callbackScope: this,
+
+		});
+
+		ventanaMensaje.add({
+			targets: this.messageWindow,
+			y: -this.scene.scene.cameras.main.height,
+			duration: 300,
+			ease: 'BounceOut',
+			repeat: 0,
+			callbackScope: this,
+
+		});
+
+		ventanaMensaje.play();
 
 	}
 
@@ -146,6 +347,8 @@ class Level extends Phaser.Scene {
 
 	}
 
+
+
 	createPlayerEnergyBar(){
 
 		this.lifeVisual2 = this.add.rectangle(70, 40, 400, 40, 0xEA1992,0.7);
@@ -159,12 +362,25 @@ class Level extends Phaser.Scene {
 
 
 	}
+	crearPowerUps(){
+		this.crearPowerUps = this.time.addEvent({
+			delay: 500,                // ms
+			callback: function(){
+				const powerUp = new PowerUp(this, Phaser.Math.Between(40,500), this.cameras.main.height+30);
+				this.add.existing(powerUp);
+			},
+			//args: [],
+			callbackScope: this,
+			loop: true
+		});
+	}
 
 	createEnemies(){
 			console.log("current wave " + this.currentWave)
 
 				if(this.currentWave>this.wavesUntilKraken){
 					console.log("crear kraken");
+					this.crearPowerUps()
 					this.kraken.aparecer();
 					this.enemyCreationTimer.destroy();
 				}else{

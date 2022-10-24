@@ -17,34 +17,34 @@ class Inicio extends Phaser.Scene {
 	editorCreate() {
 
 		// background
-		const background = this.add.tileSprite(0, 0, 64, 64, "background");
+		const background = this.add.tileSprite(0, 0, 64, 64, "iniBg");
 		background.setOrigin(0, 0);
 
-		// botonera
-		const botonera = this.add.sprite(418, 404, "botonera");
+		// patoTitle
+		const patoTitle = this.add.image(413, 327, "patoTitle");
 
 		// jugarBtn
 		const jugarBtn = this.add.sprite(420, 382, "jugarBtn");
 
-		// creditos
-		const creditos = this.add.sprite(418, 487, "creditos");
+		// patoFlying
+		const patoFlying = this.add.image(-34, 236, "patoFlying");
 
 		this.background = background;
-		this.botonera = botonera;
+		this.patoTitle = patoTitle;
 		this.jugarBtn = jugarBtn;
-		this.creditos = creditos;
+		this.patoFlying = patoFlying;
 
 		this.events.emit("scene-awake");
 	}
 
 	/** @type {Phaser.GameObjects.TileSprite} */
 	background;
-	/** @type {Phaser.GameObjects.Sprite} */
-	botonera;
+	/** @type {Phaser.GameObjects.Image} */
+	patoTitle;
 	/** @type {Phaser.GameObjects.Sprite} */
 	jugarBtn;
-	/** @type {Phaser.GameObjects.Sprite} */
-	creditos;
+	/** @type {Phaser.GameObjects.Image} */
+	patoFlying;
 
 	/* START-USER-CODE */
 
@@ -57,22 +57,49 @@ class Inicio extends Phaser.Scene {
 		this.splash_screen.play();
 
 		this.editorCreate();
-		this.jugarBtn.x=this.cameras.main.centerX+160;
-		this.jugarBtn.y=this.cameras.main.centerY+50;
+		this.jugarBtn.x=this.cameras.main.centerX;
+		this.jugarBtn.y=this.cameras.main.centerY+340;
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
-		this.creditos.x=this.cameras.main.centerX+160;
-		this.creditos.y=this.cameras.main.centerY+150;
-		this.creditos.setInteractive().on('pointerup', this.mostrarCreditos,this);
+		this.patoTitle.x=this.cameras.main.centerX;
+		this.patoTitle.y=this.cameras.main.centerY;
+
+		this.patoFlying.x=this.cameras.main.centerX;
+		this.patoFlying.y=this.cameras.main.centerY;
 
 		this.background.width=3000;
 		this.background.height=3000;
 
+		this.animateStuff();
 
+	}
 
-		this.botonera.setScale(0.6,0.6);
-		this.botonera.x = this.cameras.main.centerX+125;
-		this.botonera.y =  this.cameras.main.centerY+100;;
+	animateStuff(){
+
+		var animateFlying = this.tweens.createTimeline();
+		animateFlying.add({
+			targets: this.patoFlying,
+			y: this.cameras.main.centerY+20,
+			duration: 1000,
+			ease: 'Linear',
+			yoyo:true,
+			repeat: -1
+
+		});
+		animateFlying.play();
+
+		var animateJugarBtn = this.tweens.createTimeline();
+		animateJugarBtn.add({
+			targets: this.jugarBtn,
+			scale:1.1,
+			duration: 500,
+			ease: 'Bounce',
+			yoyo:true,
+			repeat: -1
+
+		});
+		animateJugarBtn.play();
+
 	}
 
 	mostrarCreditos(){

@@ -109,6 +109,52 @@
             "fontFamily": "Arial",
             "fontSize": "36px",
             "fontStyle": "bold"
+        },
+        {
+            "type": "Image",
+            "id": "66ed927b-98c7-435b-874c-c74c82b9367f",
+            "label": "alertHalo",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "alertHalo"
+            }
+        },
+        {
+            "type": "Image",
+            "id": "d124558d-8755-4828-b3f1-49c3078b474c",
+            "label": "messageWindow",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "messageWindow"
+            },
+            "x": 88,
+            "y": 548
+        },
+        {
+            "type": "Image",
+            "id": "2f4e3527-b0ca-4e74-aea6-27d1f7194665",
+            "label": "mensaje1",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "mensaje1"
+            },
+            "x": 462,
+            "y": 589
+        },
+        {
+            "type": "Image",
+            "id": "096d27e2-7f1b-407f-8922-7c2d637584b2",
+            "label": "onLogo",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "onLogo"
+            },
+            "x": 665,
+            "y": 538
         }
     ],
     "plainObjects": [],

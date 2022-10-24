@@ -18,7 +18,7 @@ class FinalExplotion extends Phaser.GameObjects.Sprite {
 	create(){
 		this.enemy_destroy = this.scene.sound.add('enemy_destroy');
 		this.enemy_destroy.loop = false;
-		thus.enemy_destroy.play();	
+		this.enemy_destroy.play();	
 		this.play("explosion1", true);
 
 	}

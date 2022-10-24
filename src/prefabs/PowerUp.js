@@ -26,6 +26,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		this.shield_up = this.scene.sound.add('shield_up');
 		this.shield_up.loop = false;
 		this.isDestroyed = false;
+		this.PowerUpValue = 10;
 	}
 
 	powerUpFill(powerUp,player){
@@ -34,6 +35,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		if(player.currentLevelFill<400){
 			player.scene.powerText.text="QUITO POWER " + player.playerLevel;
 	
+			player.scene.score +=powerUp.PowerUpValue;
 			player.currentLevelFill+=powerUp.fillPower;
 		}else{
 			if(player.playerLevel<4){

@@ -113,7 +113,7 @@ desaparecer(){
 
 hurtPlayer(){
 
-	this.body.enable=false;
+	//this.body.enable=false;
 	this.playerLevel=1;
 	this.tint=0xC70B24;
 	this.canFire=false;
@@ -345,7 +345,7 @@ update(){
 	this.checkAnimStatus();
 
 
-	if(!this.isHurt){
+	
 			if(this.isMouseDown){
 				if(this.canPlay){
 					this.yDiff=this.currentMouseY-this.scene.input.y;
@@ -356,7 +356,7 @@ update(){
 			
 
 	}
-	}
+	
 	
 	
 

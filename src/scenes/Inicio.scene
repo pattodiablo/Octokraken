@@ -14,7 +14,7 @@
             "scope": "CLASS",
             "components": [],
             "texture": {
-                "key": "background"
+                "key": "iniBg"
             },
             "originX": 0,
             "originY": 0,
@@ -22,16 +22,16 @@
             "height": 64
         },
         {
-            "type": "Sprite",
-            "id": "39a25635-1c54-49ba-8e73-f98c7222da47",
-            "label": "botonera",
-            "scope": "CLASS",
+            "type": "Image",
+            "id": "af706eb3-8c4d-42b1-992b-0517f9c4328b",
+            "label": "patoTitle",
+            "scope": "PUBLIC",
             "components": [],
             "texture": {
-                "key": "botonera"
+                "key": "patoTitle"
             },
-            "x": 418,
-            "y": 404
+            "x": 413,
+            "y": 327
         },
         {
             "type": "Sprite",
@@ -46,16 +46,16 @@
             "y": 382
         },
         {
-            "type": "Sprite",
-            "id": "df0a0646-b131-400a-a8c4-185a44421be6",
-            "label": "creditos",
-            "scope": "CLASS",
+            "type": "Image",
+            "id": "dd0f136e-ac59-4432-8829-72159cda483b",
+            "label": "patoFlying",
+            "scope": "PUBLIC",
             "components": [],
             "texture": {
-                "key": "creditos"
+                "key": "patoFlying"
             },
-            "x": 418,
-            "y": 487
+            "x": -34,
+            "y": 236
         }
     ],
     "plainObjects": [],

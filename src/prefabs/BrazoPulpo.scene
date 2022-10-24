@@ -1,0 +1,27 @@
+{
+    "id": "e47841e3-afd2-4445-9ade-b0ea6c20e518",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": ""
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "c5e3084b-868f-4265-a959-dca0b59d4c87",
+            "label": "brazoPulpo",
+            "components": [],
+            "texture": {
+                "key": "brazoPulpo"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
