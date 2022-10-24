@@ -22,6 +22,7 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 	
 		this.scene.playerBullets.push(this);
 		this.scene.physics.world.enableBody(this);
+		//this.scene.physics.velocityFromRotation(this.scene.player.rotation, 800, this.body.velocity);
 		this.body.velocity.y=1500;
 		this.body.gravity.y=90;
 		this.crearParticulas();

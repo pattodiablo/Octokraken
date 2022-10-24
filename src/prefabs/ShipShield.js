@@ -39,13 +39,23 @@ class ShipShield extends Phaser.GameObjects.Sprite {
 		entrandoTimeline.add({
 			targets: this,
 			scale: 10,
-			duration: 200,
-			yoyo:true,
+			duration: 300,
+			
 			ease: 'Linear',
 			onComplete:function(){
 			
 				this.targets[0].visible=false;
 			},
+			repeat: 0
+	
+		});
+		entrandoTimeline.add({
+			targets: this,
+			scale: 1,
+			duration: 100,
+			yoyo:true,
+			ease: 'Linear',
+			
 			repeat: 0
 	
 		});

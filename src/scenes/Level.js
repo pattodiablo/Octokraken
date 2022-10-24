@@ -385,8 +385,8 @@ class Level extends Phaser.Scene {
 					this.enemyCreationTimer.destroy();
 				}else{
 					this.enemiestoCreate = this.currentWave*3;
-					if(this.enemiestoCreate>=18){
-						this.enemiestoCreate=18;
+					if(this.enemiestoCreate>=13){
+						this.enemiestoCreate=13;
 					}
 					this.rowsTocreate = this.enemiestoCreate/this.enemiesInRow;
 					console.log("rows  to create " + this.rowsTocreate )
