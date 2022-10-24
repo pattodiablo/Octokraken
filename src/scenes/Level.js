@@ -116,9 +116,7 @@ class Level extends Phaser.Scene {
 
 		this.editorCreate();
 		this.scene.scene.cameras.main.fadeIn(1000);
-		this.soundtrack01 = this.sound.add('soundtrack01');
-		this.soundtrack01.loop = true;
-		//this.soundtrack01.play();		
+			
 
 		this.powerText.x=80;
 		this.powerText.y=26;
