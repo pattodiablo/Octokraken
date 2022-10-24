@@ -55,7 +55,7 @@ class Inicio extends Phaser.Scene {
 
 
 		this.splash_screen = this.sound.add('splash_screen');
-		this.splash_screen.loop = false;
+		this.splash_screen.loop = true;
 		this.splash_screen.play();
 
 		this.editorCreate();
