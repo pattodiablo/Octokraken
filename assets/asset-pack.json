@@ -72,6 +72,13 @@
             },
             {
                 "url": [
+                    "assets/audio/sfx/dm_alert1.mp3"
+                ],
+                "type": "audio",
+                "key": "dm_alert1"
+            },
+            {
+                "url": [
                     "assets/audio/sfx/enemy_destroy.mp3"
                 ],
                 "type": "audio",
