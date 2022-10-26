@@ -51,7 +51,7 @@ class Inicio extends Phaser.Scene {
 	// Write your code here
 
 	create() {
-		
+
 
 
 		this.splash_screen = this.sound.add('splash_screen');
@@ -61,7 +61,7 @@ class Inicio extends Phaser.Scene {
 		this.editorCreate();
 		this.jugarBtn.x=this.cameras.main.centerX;
 		this.jugarBtn.y=this.cameras.main.height+100;
-		
+
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
 		this.patoTitle.x=this.cameras.main.centerX;
@@ -86,7 +86,7 @@ class Inicio extends Phaser.Scene {
 			y: this.cameras.main.centerY+340,
 			duration: 300,
 			ease: 'Linear',
-		
+
 			repeat: 0
 
 		});

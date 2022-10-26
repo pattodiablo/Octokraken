@@ -82,7 +82,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 				
 				this.whereX = Phaser.Math.Between(100, 400);
 				this.whereY = Phaser.Math.Between(50, 960);
-				this.FinalExplotion = new FinalExplotion(this.scene, this.whereX , this.whereY);
+				this.FinalExplotion = new Fireworks(this.scene, this.whereX , this.whereY);
 				this.scene.add.existing(this.FinalExplotion);
 			},
 	
@@ -176,13 +176,17 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 		this.krakenVisual = this.scene.add.rectangle(70, 900, this.largodeBarra, 40, 0xEA1992,0.7);
 		this.krakenVisual.setOrigin(0,0.5);
-
+		this.krakenVisual.depth=3
 		this.krakenVisual2 = this.scene.add.rectangle(70, 900, this.largodeBarra, 40, 0xEA1992,0);
 		this.krakenVisual2.setOrigin(0,0.5);
 		this.krakenVisual2.setStrokeStyle(4, 0xffffff);
 		this.krakenVisual2.depth=3
 
-
+		this.pulpoText = this.scene.add.text(80, 885, "", {});
+		this.pulpoText.text = "PULPORRUPTOR";
+		this.pulpoText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
+		this.pulpoText.depth=3
+		
 
 	}
 
@@ -236,6 +240,10 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 			this.body.enable=false;
 			this.scene.score +=this.enemyValue;
 			this.desaparecer();
+			this.krakenVisual.destroy();
+			this.krakenVisual2.destroy();
+			this.scene.showLogoTimer.destroy();
+			this.pulpoText.destroy();
 			this.finalExplotionTimer = this.scene.time.addEvent({
 				delay: 300,                // ms
 				callback: function(){

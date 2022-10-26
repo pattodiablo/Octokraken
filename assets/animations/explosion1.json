@@ -350,7 +350,8 @@
             "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": 1,
-            "showOnStart": true
+            "showOnStart": true,
+            "hideOnComplete": true
         },
         {
             "key": "hit3",
@@ -437,7 +438,104 @@
             ],
             "frameRate": 24,
             "skipMissedFrames": true,
+            "repeat": -1,
+            "hideOnComplete": true
+        },
+        {
+            "key": "slime",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "slime",
+                    "frame": "pink_ball_01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "pink_ball_02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "pink_ball_03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "pink_ball_04.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "fireworks",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "slime",
+                    "frame": "firework_2_01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_04.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_05.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_06.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_07.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_08.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "slime",
+                    "frame": "firework_2_09.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,

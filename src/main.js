@@ -21,6 +21,10 @@ window.addEventListener('load', function () {
 		width: 540,
 		height:  960,
 		type: Phaser.AUTO,
+		scale: {
+			mode: Phaser.Scale.ENVELOP,
+		
+		},
         backgroundColor: "#242424",
 		physics: {
 			default: "arcade",
