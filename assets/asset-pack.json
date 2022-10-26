@@ -151,6 +151,17 @@
                 "key": "FinalExplotion"
             },
             {
+                "atlasURL": "assets/animations/fireworks.json",
+                "textureURL": "assets/animations/fireworks.png",
+                "type": "atlas",
+                "key": "fireworks"
+            },
+            {
+                "url": "src/prefabs/Fireworks.js",
+                "type": "script",
+                "key": "Fireworks"
+            },
+            {
                 "atlasURL": "assets/atlas/flares.json",
                 "textureURL": "assets/atlas/flares.png",
                 "type": "atlas",
@@ -417,6 +428,12 @@
                 ],
                 "type": "scripts",
                 "key": "ShipShield"
+            },
+            {
+                "atlasURL": "assets/animations/slime.json",
+                "textureURL": "assets/animations/slime.png",
+                "type": "atlas",
+                "key": "slime"
             },
             {
                 "url": [

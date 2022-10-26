@@ -1,0 +1,116 @@
+{"frames": [
+
+{
+	"filename": "firework_2_01.png",
+	"frame": {"x":865,"y":925,"w":14,"h":14},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":93,"y":92,"w":14,"h":14},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_02.png",
+	"frame": {"x":761,"y":1404,"w":42,"h":44},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":77,"y":79,"w":42,"h":44},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_03.png",
+	"frame": {"x":694,"y":1404,"w":66,"h":68},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":65,"y":67,"w":66,"h":68},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_04.png",
+	"frame": {"x":694,"y":806,"w":108,"h":104},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":43,"y":50,"w":108,"h":104},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_05.png",
+	"frame": {"x":1,"y":806,"w":692,"h":670},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":147,"y":182,"w":692,"h":670},
+	"sourceSize": {"w":1024,"h":1024}
+},
+{
+	"filename": "firework_2_06.png",
+	"frame": {"x":1,"y":1,"w":814,"h":804},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":91,"y":121,"w":814,"h":804},
+	"sourceSize": {"w":1024,"h":1024}
+},
+{
+	"filename": "firework_2_07.png",
+	"frame": {"x":694,"y":925,"w":170,"h":168},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":19,"w":170,"h":168},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_08.png",
+	"frame": {"x":694,"y":1249,"w":156,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":27,"w":156,"h":154},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "firework_2_09.png",
+	"frame": {"x":694,"y":1094,"w":156,"h":154},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":26,"w":156,"h":154},
+	"sourceSize": {"w":200,"h":200}
+},
+{
+	"filename": "pink_ball_01.png",
+	"frame": {"x":816,"y":479,"w":73,"h":233},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":73,"h":233},
+	"sourceSize": {"w":75,"h":245}
+},
+{
+	"filename": "pink_ball_02.png",
+	"frame": {"x":816,"y":243,"w":73,"h":235},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":73,"h":235},
+	"sourceSize": {"w":75,"h":245}
+},
+{
+	"filename": "pink_ball_03.png",
+	"frame": {"x":816,"y":1,"w":73,"h":241},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":73,"h":241},
+	"sourceSize": {"w":75,"h":245}
+},
+{
+	"filename": "pink_ball_04.png",
+	"frame": {"x":816,"y":713,"w":73,"h":211},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":73,"h":211},
+	"sourceSize": {"w":75,"h":245}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "slime.png",
+	"format": "RGBA8888",
+	"size": {"w":890,"h":1477},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fe26f2b55f923febcdd4b05d50bd7dee:1aafcc0df1f830765a4c073880b3d58a:5969a7bd39dc609f49b3bb3f3e71107a$"
+}
+}

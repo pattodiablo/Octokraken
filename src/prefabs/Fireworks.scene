@@ -1,5 +1,5 @@
 {
-    "id": "b7243d66-a172-4f4a-9155-7f2b30d00220",
+    "id": "504fc6eb-0555-4063-8a74-25bc6c185b90",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
@@ -9,14 +9,15 @@
     "displayList": [
         {
             "type": "Sprite",
-            "id": "cbdd9d08-503d-4ef4-999c-51696a1cdbd2",
-            "label": "krakenBullet",
-            "scope": "CLASS",
+            "id": "514bf314-f36e-41ff-a99d-1f2249cdf0c7",
+            "label": "firework_red5_png",
             "components": [],
             "texture": {
                 "key": "slime",
-                "frame": "pink_ball_02.png"
-            }
+                "frame": "firework_2_01.png"
+            },
+            "scaleX": 0.3,
+            "scaleY": 0.3
         }
     ],
     "plainObjects": [],

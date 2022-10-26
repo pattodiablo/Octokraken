@@ -6,7 +6,7 @@
 class KrakenBullet extends Phaser.GameObjects.Sprite {
 
 	constructor(scene, x, y, texture, frame) {
-		super(scene, x ?? 0, y ?? 0, texture || "krakenBullet", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "slime", frame ?? "pink_ball_02.png");
 
 		/* START-USER-CTR-CODE */
 		this.createEvent = this.scene.events.once("update", () => this.create());
@@ -15,11 +15,14 @@ class KrakenBullet extends Phaser.GameObjects.Sprite {
 
 	/* START-USER-CODE */
 	create(){
+		this.play("slime", true);
 		this.scene.physics.world.enableBody(this);
 		this.overlapObject = this.scene.physics.add.overlap(this, this.scene.player,this.collidePlayer);
 		this.isBulletactive =  true;
 		this.body.velocity.y=-400;
 		this.setDepth(0)
+		this.body.setOffset(12, 0);
+		this.body.setSize(50, 70, false);	
 
 		this.animarNacimiento();
 
@@ -38,7 +41,7 @@ class KrakenBullet extends Phaser.GameObjects.Sprite {
 
 		});
 		entrandoTimeline.play();
-		
+
 	}
 
 	collidePlayer(bullet,player){
@@ -52,7 +55,7 @@ class KrakenBullet extends Phaser.GameObjects.Sprite {
 	}
 
 
-	
+
 
 	/* END-USER-CODE */
 }

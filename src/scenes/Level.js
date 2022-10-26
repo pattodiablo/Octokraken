@@ -29,7 +29,7 @@ class Level extends Phaser.Scene {
 
 		// powerText
 		const powerText = this.add.text(40, 208, "", {});
-		powerText.text = "PATO POWER";
+		powerText.text = "QUITO POWER 0";
 		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
 		// shipShield
@@ -45,7 +45,7 @@ class Level extends Phaser.Scene {
 
 		// scoreText
 		const scoreText = this.add.text(313, 148, "", {});
-		scoreText.text = "00000\n";
+		scoreText.text = "0";
 		scoreText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
 
 		// alertHalo
@@ -180,7 +180,7 @@ class Level extends Phaser.Scene {
 		this.createEnemies();
 		this.createPlayerEnergyBar();
 
-		//this.ganaste();
+		//this.kraken.aparecer();
 		this.generateRandomPulpoAttack();
 		this.showLogoSometimes();
 	}
