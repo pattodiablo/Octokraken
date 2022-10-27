@@ -204,6 +204,11 @@
                 "key": "Heart"
             },
             {
+                "url": "src/scenes/Historia.js",
+                "type": "sceneFile",
+                "key": "Historia"
+            },
+            {
                 "url": [
                     "src/prefabs/HitAnimation.js"
                 ],
