@@ -6,7 +6,91 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Historia"
     },
-    "displayList": [],
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "ffa91db6-b2aa-415a-b5ad-0c630b51265c",
+            "label": "historyBg1",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "historyBg1"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "97a8a140-62b9-4aca-b9ec-b88fe5c0eecf",
+            "label": "oktokraken_1",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "Oktokraken_1"
+            },
+            "x": 159,
+            "y": 789
+        },
+        {
+            "type": "Image",
+            "id": "288c122c-a157-4797-abd6-97e5f779efa4",
+            "label": "explotion",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "Explotion"
+            },
+            "x": 402,
+            "y": 776
+        },
+        {
+            "type": "Image",
+            "id": "4fd8d243-2f94-4a9f-a936-e0ccdeace78b",
+            "label": "historyBg3",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "historyBg3"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
+            "type": "Image",
+            "id": "a66568a2-a756-4612-90ca-39cc9cded2ab",
+            "label": "patoOnJet",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "PatoOnJet"
+            },
+            "x": 762,
+            "y": 576
+        },
+        {
+            "type": "Image",
+            "id": "a525f83d-94a2-47b2-a1c1-57c4461b0b7c",
+            "label": "textoHistoria",
+            "components": [],
+            "texture": {
+                "key": "textoHistoria"
+            },
+            "x": 257,
+            "y": 215
+        },
+        {
+            "type": "Image",
+            "id": "4d152ec4-8396-4a8c-897c-ad4dd7e358fe",
+            "label": "jugarBtn",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "jugarBtn"
+            },
+            "x": 288,
+            "y": 813
+        }
+    ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",

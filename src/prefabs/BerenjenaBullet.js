@@ -39,14 +39,14 @@ class BerenjenaBullet extends Phaser.GameObjects.Sprite {
 		
 		this.particles.createEmitter({
 			frame: "flare30000",
-			scale: { start: 1, end: 0.1 },
+			scale: { start: 0.6, end: 0.2 },
 			blendMode: 'ADD',
-			lifespan: 60,
+			lifespan: 30,
 			//	emitZone: { type: 'edge', source: rose, quantity: 360 },
 			follow: this
 		});
 	
-
+		this.particles.depth=1;
 	
 	
 	}

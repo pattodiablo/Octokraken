@@ -95,7 +95,7 @@
                 "key": "ganasteLabel"
             },
             "x": 395,
-            "y": 291
+            "y": 675
         },
         {
             "type": "Text",
@@ -167,7 +167,7 @@
                 "key": "jugarBtn"
             },
             "x": 371,
-            "y": 726
+            "y": 666
         }
     ],
     "plainObjects": [],

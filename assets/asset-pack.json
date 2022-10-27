@@ -153,6 +153,11 @@
                 "key": "explosion1"
             },
             {
+                "url": "assets/Explotion.png",
+                "type": "image",
+                "key": "Explotion"
+            },
+            {
                 "url": "src/prefabs/FinalExplotion.js",
                 "type": "script",
                 "key": "FinalExplotion"
@@ -207,6 +212,16 @@
                 "url": "src/scenes/Historia.js",
                 "type": "sceneFile",
                 "key": "Historia"
+            },
+            {
+                "url": "assets/historyBg1.png",
+                "type": "image",
+                "key": "historyBg1"
+            },
+            {
+                "url": "assets/historyBg3.png",
+                "type": "image",
+                "key": "historyBg3"
             },
             {
                 "url": [
@@ -322,6 +337,11 @@
                 "key": "Oktokraken"
             },
             {
+                "url": "assets/Oktokraken.png",
+                "type": "image",
+                "key": "Oktokraken_1"
+            },
+            {
                 "atlasURL": "assets/atlas/OktokrakenPlayer.json",
                 "textureURL": "assets/atlas/OktokrakenPlayer.png",
                 "type": "atlas",
@@ -353,6 +373,11 @@
                 "url": "assets/patoFlying.png",
                 "type": "image",
                 "key": "patoFlying"
+            },
+            {
+                "url": "assets/PatoOnJet.png",
+                "type": "image",
+                "key": "PatoOnJet"
             },
             {
                 "url": "assets/patoTitle.png",
@@ -460,6 +485,11 @@
                 ],
                 "type": "audio",
                 "key": "splash_screen"
+            },
+            {
+                "url": "assets/textoHistoria.png",
+                "type": "image",
+                "key": "textoHistoria"
             },
             {
                 "url": [

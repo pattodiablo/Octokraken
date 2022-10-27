@@ -29,7 +29,7 @@ class Level extends Phaser.Scene {
 
 		// powerText
 		const powerText = this.add.text(40, 208, "", {});
-		powerText.text = "QUITO POWER 0";
+		powerText.text = "PATO POWER";
 		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
 		// shipShield
@@ -41,11 +41,11 @@ class Level extends Phaser.Scene {
 		this.add.existing(kraken);
 
 		// ganasteLabel
-		const ganasteLabel = this.add.sprite(395, 291, "ganasteLabel");
+		const ganasteLabel = this.add.sprite(395, 675, "ganasteLabel");
 
 		// scoreText
 		const scoreText = this.add.text(313, 148, "", {});
-		scoreText.text = "0";
+		scoreText.text = "00000\n";
 		scoreText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
 
 		// alertHalo
@@ -62,7 +62,7 @@ class Level extends Phaser.Scene {
 		const onLogo = this.add.image(665, 538, "onLogo");
 
 		// jugarBtn
-		const jugarBtn = this.add.image(371, 726, "jugarBtn");
+		const jugarBtn = this.add.image(371, 666, "jugarBtn");
 
 		this.background = background;
 		this.player = player;
@@ -116,7 +116,7 @@ class Level extends Phaser.Scene {
 
 		this.editorCreate();
 		this.scene.scene.cameras.main.fadeIn(1000);
-			
+
 
 		this.powerText.x=80;
 		this.powerText.y=26;
@@ -136,7 +136,7 @@ class Level extends Phaser.Scene {
 		this.background.height=960;
 
 		this.ganasteLabel.x=this.scene.scene.cameras.main.width/2;
-		this.ganasteLabel.y=this.scene.scene.cameras.main.height/2;
+		this.ganasteLabel.y=this.scene.scene.cameras.main.height/2+130;
 		this.ganasteLabel.visible=false;
 		this.ganasteLabel.setScale(0.1);
 		this.ganasteLabel.setDepth(3);
@@ -183,6 +183,7 @@ class Level extends Phaser.Scene {
 		//this.kraken.aparecer();
 		this.generateRandomPulpoAttack();
 		this.showLogoSometimes();
+
 	}
 
 	iniciarJuego(){
