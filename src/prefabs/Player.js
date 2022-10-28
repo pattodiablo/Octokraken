@@ -115,6 +115,7 @@ hurtPlayer(){
 
 	//this.body.enable=false;
 	this.playerLevel--;
+	this.body.enable=false;
 	if(this.playerLevel<=1){
 		this.playerLevel=1;	
 	}
@@ -123,27 +124,40 @@ hurtPlayer(){
 	this.isHurt=true;
 	this.currentLevelFill = 0;
 
-	this.FinalExplotion = new FinalExplotion(this.scene, this.x , this.y);
-				this.scene.add.existing(this.FinalExplotion);
+	var timer = this.scene.time.addEvent({
+		delay: 500,                // ms
+		callback: function(){
+		
+			
+			this.FinalExplotion = new FinalExplotion(this.scene, this.x  ,  this.y);
+			this.scene.add.existing(this.FinalExplotion);
+		},
+		//args: [],
+		callbackScope: this,
+		repeat: 5
+	});
 
-	var blinking = this.scene.tweens.createTimeline();
-	blinking.add({
+	
+
+
+	var retirar = this.scene.tweens.createTimeline();
+	retirar.add({
 			targets: this,
-			alpha: 0.7,
-			duration: 50,
-			ease: 'Linear',
-			repeat: 20,
-			yoyo: true,
+			delay:1000,
+			duration: 200,
+			ease: 'Phaser.Math.Easing.Quadratic.Out',
+			y: -100,
+			
 			onComplete: function(){
-				this.alpha=1;
+			
 				this.targets[0].tint=0xffffff;
-				this.targets[0].body.enable=true;
+				//this.targets[0].body.enable=true;
 				this.targets[0].canFire=true;
 				this.targets[0].isHurt=false;
 			}
 
 		});
-		blinking.play();
+		retirar.play();
 }
 
 
