@@ -450,6 +450,13 @@
                 "key": "propsNew"
             },
             {
+                "url": [
+                    "assets/audio/sfx/pwrup02.mp3"
+                ],
+                "type": "audio",
+                "key": "pwrup02"
+            },
+            {
                 "url": "assets/rejugarBtn.png",
                 "type": "image",
                 "key": "rejugarBtn"
