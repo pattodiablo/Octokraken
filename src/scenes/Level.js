@@ -64,6 +64,9 @@ class Level extends Phaser.Scene {
 		// jugarBtn
 		const jugarBtn = this.add.image(371, 666, "jugarBtn");
 
+		// lists
+		const enemigos = [];
+
 		this.background = background;
 		this.player = player;
 		this.moon = moon;
@@ -77,6 +80,7 @@ class Level extends Phaser.Scene {
 		this.mensaje1 = mensaje1;
 		this.onLogo = onLogo;
 		this.jugarBtn = jugarBtn;
+		this.enemigos = enemigos;
 
 		this.events.emit("scene-awake");
 	}
@@ -107,6 +111,8 @@ class Level extends Phaser.Scene {
 	onLogo;
 	/** @type {Phaser.GameObjects.Image} */
 	jugarBtn;
+	/** @type {Array<any>} */
+	enemigos;
 
 	/* START-USER-CODE */
 
@@ -191,11 +197,13 @@ class Level extends Phaser.Scene {
 	}
 
 	showLogoSometimes(){
+
 		this.showLogoTimer = this.time.addEvent({
 			delay: 4000,                // ms
 			callback: function(){
+
 				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
-				console.log(this.probabilidadATTACK)
+						
 				if(this.probabilidadATTACK>15){
 					if(!this.onLogo.visible){
 						this.onLogo.visible=true;
@@ -227,7 +235,7 @@ class Level extends Phaser.Scene {
 			delay: 4000,                // ms
 			callback: function(){
 				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
-				console.log(this.probabilidadATTACK)
+			
 				if(this.probabilidadATTACK>15){
 					if(this.canAttackPulpo){
 						this.generarPulpoAttack();
@@ -410,10 +418,10 @@ class Level extends Phaser.Scene {
 	}
 
 	createEnemies(){
-			console.log("current wave " + this.currentWave)
+	
 
 				if(this.currentWave>this.wavesUntilKraken){
-					console.log("crear kraken");
+					
 					this.crearPowerUps()
 					this.kraken.aparecer();
 					this.enemyCreationTimer.destroy();
@@ -423,7 +431,7 @@ class Level extends Phaser.Scene {
 						this.enemiestoCreate=13;
 					}
 					this.rowsTocreate = this.enemiestoCreate/this.enemiesInRow;
-					console.log("rows  to create " + this.rowsTocreate )
+					
 				for(var j=0; j<=this.rowsTocreate; j++){
 					for(var i=0; i<=this.enemiesInRow; i++){
 					this.wichEnemy = Phaser.Math.Between(1, 3);

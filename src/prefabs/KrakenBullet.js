@@ -46,10 +46,11 @@ class KrakenBullet extends Phaser.GameObjects.Sprite {
 
 	collidePlayer(bullet,player){
 		if(bullet.isBulletactive){
-			player.hurtPlayer();
+		
 			this.FinalExplotion = new FinalExplotion(player.scene, player.x ,  player.y);
 			player.scene.add.existing(this.FinalExplotion);
 			bullet.isBulletactive=false;
+			player.hurtPlayer();
 		}
 
 	}

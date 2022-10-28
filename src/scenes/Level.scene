@@ -176,5 +176,12 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "1f6d1a94-778f-463d-98d0-18d58a9e7015",
+            "label": "enemigos",
+            "scope": "PUBLIC"
+        }
+    ]
 }

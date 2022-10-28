@@ -26,7 +26,7 @@ class MensajeRandom extends Phaser.GameObjects.Sprite {
 		this.dm_alert1.play();
 		
 		this.cualMensaje = Phaser.Math.Between(1,6);
-		console.log("mensaje generado " +  this.cualMensaje)
+
 		switch(this.cualMensaje ){
 			case 1:
 				this.setTexture("mensaje1");

@@ -40,6 +40,30 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 		this.hurt.loop = false;
 	}
 
+
+	destroyByDeadPlayer(){
+
+		this.enemyLife=0;
+		this.play("explosion1",true);
+		this.enemy_destroy.play();	
+		this.body.enable=false;
+
+
+
+		var destroyTimer = this.scene.time.addEvent({
+			delay: 500,                // ms
+			callback: function(){
+
+				this.destroyObjetc(true);
+			},
+			//args: [],
+			callbackScope: this,
+			loop: false
+		});
+	
+	}
+
+
 	collideWithShield(shield, enemy){
 	
 		enemy.enemyLife=0;
@@ -63,15 +87,48 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	}
 
 
-	destroyObjetc(){
+	destroyObjetc(noSumar){
 
-		this.scene.score +=this.enemyValue;
 
+		try {
+			
+	if(!noSumar){
+		if(this.scene!== "undefined"){
+			this.scene.score +=this.enemyValue;
+
+		}
+	}
+
+			
+		
 		this.isDestroyed=true;
-		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
+		if(this.scene!== "undefined"){
+
+		
+				this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
+		
+			  
+		
+	
+		}
+		
+
+		const index = this.scene.enemies.indexOf(this);
+		if (index > -1) { // only splice array when item is found
+			this.scene.enemies.splice(index, 1); // 2nd parameter means remove one item only
+		}
+
+		// array = [2, 9]
 	
 	
 		this.destroy();
+		  } catch (error) {
+	
+			// expected output: ReferenceError: nonExistentFunction is not defined
+			// Note - error messages will vary depending on browser
+		  }
+		  
+
 
 	}
 
@@ -80,7 +137,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 
 		if(!this.isDestroyed){
 			if(this.y<-100){
-			console.log("enemy destroyed");
+		
 			this.destroyObjetc();
 			
 			}
@@ -117,7 +174,14 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 
 
 	enemyDestroy(bullet,enemy){
+
+		
 		//poner sonido
+
+
+
+	
+
 		
 		bullet.destroyObjectByCollide(bullet);
 		if(this.enemyLife>0){
@@ -164,7 +228,7 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 	playerCollide(player,enemy){
 		player.hurtPlayer();
 		enemy.enemy_destroy2.play();	
-		enemy.collideWithShield(enemy.scene.shipShield,enemy);
+		//enemy.collideWithShield(enemy.scene.shipShield,enemy);
 		
 	}
 

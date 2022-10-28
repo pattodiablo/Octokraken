@@ -44,8 +44,10 @@ create(){
 		this.currentMouseY = this.scene.input.y;
 		this.currentMouseX= this.scene.input.x;
 
-		this.isFiring=true;
+		
 		if(this.canFire){
+			this.isFiring=true;
+			console.log("dispara")
 			this.fire();
 		}
 		
@@ -84,14 +86,14 @@ stopPlay(){
 	this.desaparecer();
 }
 
-
+/*
 collideKrakenBullet(){
-	console.log("is playerhurt")
+
 	this.isHurt=true;
 
 }
 
-
+*/
 desaparecer(){
 
 	var desaparecer = this.scene.tweens.createTimeline();
@@ -100,10 +102,10 @@ desaparecer(){
 			y: -100,
 			duration: 500,
 			ease: 'Linear',
-			
+			onCompleteScope:this,
 			
 			onComplete: function(){
-				
+			
 			}
 
 		});
@@ -112,29 +114,30 @@ desaparecer(){
 }
 
 hurtPlayer(){
-
+console.log("player is hurt")
 	//this.body.enable=false;
+	this.canPlay=false;
+	this.canFire=false;
 	this.playerLevel--;
 	this.body.enable=false;
+	this.tint=0xC70B24;
+	this.isHurt=true;
+	this.currentLevelFill = 0;
+	
 	if(this.playerLevel<=1){
 		this.playerLevel=1;	
 	}
-	this.tint=0xC70B24;
-	this.canFire=false;
-	this.isHurt=true;
-	this.currentLevelFill = 0;
 
 	var timer = this.scene.time.addEvent({
-		delay: 500,                // ms
+		delay: 200,                // ms
 		callback: function(){
-		
-			
+
 			this.FinalExplotion = new FinalExplotion(this.scene, this.x  ,  this.y);
 			this.scene.add.existing(this.FinalExplotion);
 		},
 		//args: [],
 		callbackScope: this,
-		repeat: 5
+		repeat: 3
 	});
 
 	
@@ -144,20 +147,55 @@ hurtPlayer(){
 	retirar.add({
 			targets: this,
 			delay:1000,
-			duration: 200,
+			duration: 400,
 			ease: 'Phaser.Math.Easing.Quadratic.Out',
-			y: -100,
+			y: -50,
 			
 			onComplete: function(){
 			
+				this.targets[0].x=this.targets[0].scene.cameras.main.centerX;
 				this.targets[0].tint=0xffffff;
-				//this.targets[0].body.enable=true;
-				this.targets[0].canFire=true;
 				this.targets[0].isHurt=false;
+	
+				this.targets[0].scene.enemies.forEach(enemy => {
+					enemy.destroyByDeadPlayer();
+				});
+			}
+
+		});
+
+		retirar.add({
+			targets: this,
+			delay:2000,
+			duration: 1000,
+			ease: 'Phaser.Math.Easing.Quadratic.Out',
+			y: 200,
+			x: this.scene.cameras.main.centerX,
+			
+			onComplete: function(){
+			
+				this.targets[0].scene.shipShield.visible=true;
+				this.targets[0].coolDowntime();
+			
+				
 			}
 
 		});
 		retirar.play();
+}
+coolDowntime(){
+	this.coolDownTimer = this.scene.time.addEvent({
+		delay: 2500,                // ms
+		callback: function(){
+			this.canPlay=true;
+			this.canFire=true;
+			this.scene.shipShield.visible=false;
+			this.body.enable=true;
+		},
+		//args: [],
+		callbackScope: this,
+		loop: false
+	});
 }
 
 
