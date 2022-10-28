@@ -33,6 +33,11 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	
 		this.setDepth(1);
 
+		
+
+		this.kraken_shot = this.scene.sound.add('kraken_shot');
+		this.kraken_shot.loop = false;
+
 	}
 
 	createBullets(){
@@ -43,6 +48,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 				
 				const krakenBullet = new KrakenBullet(this.scene, this.x, this.y);
 				this.scene.add.existing(krakenBullet);
+				this.kraken_shot.play();
 			},
 	
 			//args: [],

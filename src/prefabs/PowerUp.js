@@ -84,7 +84,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 		this.isDestroyed=true;
 		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
-		this.pwrup02.play();
+		//this.pwrup02.play();
 		this.destroy();
 		
 		

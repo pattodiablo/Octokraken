@@ -260,6 +260,13 @@
                 "key": "jugarBtn"
             },
             {
+                "url": [
+                    "assets/audio/sfx/kraken_shot.mp3"
+                ],
+                "type": "audio",
+                "key": "kraken_shot"
+            },
+            {
                 "url": "assets/animations/krakenAnimations.json",
                 "type": "animation",
                 "key": "krakenAnimations"
