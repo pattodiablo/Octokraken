@@ -76,11 +76,15 @@ class Historia extends Phaser.Scene {
 			this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 			this.animar();
 
+		this.misterio = this.sound.add('misterio');
+		this.misterio.loop = true;
+		this.misterio.play();
 	}
 
 	iniciarJuego(){
 	
 		this.scene.start('Level');
+		this.misterio.stop();
 	}
 
 

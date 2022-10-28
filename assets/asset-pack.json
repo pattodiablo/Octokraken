@@ -46,6 +46,13 @@
                 "key": "Boss"
             },
             {
+                "url": [
+                    "assets/audio/music/bossfight01.mp3"
+                ],
+                "type": "audio",
+                "key": "bossfight01"
+            },
+            {
                 "url": "assets/botonera.png",
                 "type": "image",
                 "key": "botonera"
@@ -497,6 +504,13 @@
                 ],
                 "type": "audio",
                 "key": "travel"
+            },
+            {
+                "url": [
+                    "assets/audio/music/youwin01.mp3"
+                ],
+                "type": "audio",
+                "key": "youwin01"
             }
         ]
     },
