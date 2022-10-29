@@ -35,6 +35,7 @@ create(){
 	this.playerLevel=1;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
+	this.maxLevelFill = this.scene.lifeVisual2.width;
 	this.canFire=true;
 	this.isHurt=false;
 	this.canPlay = true;
