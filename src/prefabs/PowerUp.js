@@ -27,7 +27,10 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		this.shield_up.loop = false;
 		this.isDestroyed = false;
 		this.PowerUpValue = 10;
-	
+
+		this.pwrup02 = this.scene.sound.add('pwrup02');
+		this.pwrup02.loop = false;
+		
 	}
 
 	powerUpFill(powerUp,player){
@@ -55,6 +58,9 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		}
 		
 		powerUp.destroy();
+		console.log("suena");
+		//this.pwrup02.play();
+		
 	}
 
 	animarNacimiento(){
@@ -81,9 +87,11 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 		this.isDestroyed=true;
 		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
-	
-	
+		//this.pwrup02.play();
 		this.destroy();
+		
+		
+		
 
 	}
 
@@ -96,6 +104,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 			this.destroyObjetc();
 			}
 		}
+		
 		
 	}
 	/* END-USER-CODE */

@@ -46,6 +46,13 @@
                 "key": "Boss"
             },
             {
+                "url": [
+                    "assets/audio/music/bossfight01.mp3"
+                ],
+                "type": "audio",
+                "key": "bossfight01"
+            },
+            {
                 "url": "assets/botonera.png",
                 "type": "image",
                 "key": "botonera"
@@ -253,6 +260,13 @@
                 "key": "jugarBtn"
             },
             {
+                "url": [
+                    "assets/audio/sfx/kraken_shot.mp3"
+                ],
+                "type": "audio",
+                "key": "kraken_shot"
+            },
+            {
                 "url": "assets/animations/krakenAnimations.json",
                 "type": "animation",
                 "key": "krakenAnimations"
@@ -443,6 +457,13 @@
                 "key": "propsNew"
             },
             {
+                "url": [
+                    "assets/audio/sfx/pwrup02.mp3"
+                ],
+                "type": "audio",
+                "key": "pwrup02"
+            },
+            {
                 "url": "assets/rejugarBtn.png",
                 "type": "image",
                 "key": "rejugarBtn"
@@ -497,6 +518,13 @@
                 ],
                 "type": "audio",
                 "key": "travel"
+            },
+            {
+                "url": [
+                    "assets/audio/music/youwin01.mp3"
+                ],
+                "type": "audio",
+                "key": "youwin01"
             }
         ]
     },
