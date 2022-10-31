@@ -62,10 +62,14 @@ class Level extends Phaser.Scene {
 		const onLogo = this.add.image(665, 538, "onLogo");
 
 		// jugarBtn
-		const jugarBtn = this.add.image(371, 666, "jugarBtn");
+		const jugarBtn = this.add.image(374, 607, "jugarBtn");
+		jugarBtn.scaleX = 0.7;
+		jugarBtn.scaleY = 0.7;
 
 		// shareBtn
-		const shareBtn = this.add.image(374, 800, "shareBtn");
+		const shareBtn = this.add.image(374, 719, "shareBtn");
+		shareBtn.scaleX = 0.7;
+		shareBtn.scaleY = 0.7;
 
 		// lists
 		const enemigos = [];
@@ -189,7 +193,7 @@ class Level extends Phaser.Scene {
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
 		this.shareBtn.x=this.scene.scene.cameras.main.width/2;
-		this.shareBtn.visible=true;
+		this.shareBtn.visible=false;
 		this.shareBtn.setInteractive().on('pointerup', this.game.shareEvent,this);
 
 		this.playerBullets=[];
@@ -380,6 +384,7 @@ class Level extends Phaser.Scene {
 		this.youwin01.play();
 
 		this.jugarBtn.visible=true;
+		this.shareBtn.visible=true;
 
 		this.tweens.add({
 			targets: this.jugarBtn,
@@ -520,7 +525,12 @@ class Level extends Phaser.Scene {
 
 		this.scoreText.text = this.score;
 
-
+		if(this.player.x<0){
+			this.player.x=0;
+		}
+		if(this.player.x>this.cameras.main.width){
+			this.player.x=this.cameras.main.width;
+		}
 
 	}
 

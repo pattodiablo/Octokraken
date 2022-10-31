@@ -166,8 +166,10 @@
             "texture": {
                 "key": "jugarBtn"
             },
-            "x": 371,
-            "y": 666
+            "x": 374,
+            "y": 607,
+            "scaleX": 0.7,
+            "scaleY": 0.7
         },
         {
             "type": "Image",
@@ -179,7 +181,9 @@
                 "key": "shareBtn"
             },
             "x": 374,
-            "y": 800
+            "y": 719,
+            "scaleX": 0.7,
+            "scaleY": 0.7
         }
     ],
     "plainObjects": [],

@@ -353,10 +353,15 @@ fire(){
 }
 
 stopFire(){
-	if(this.fireClock!=="undefined"){
-		this.fireClock.remove();
-
+	try {
+		if(this.fireClock!=="undefined"){
+			this.fireClock.remove();
+	
+		}
+	} catch (error) {
+		
 	}
+	
 
 
 }
