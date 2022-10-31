@@ -45,6 +45,7 @@ window.addEventListener('load', function () {
 	game.scene.add("Boot", Boot, true);
 
 	game.shareEvent = async function(){
+		game.canvas.preserveDrawingBuffer=true
 		const dataUrl = game.canvas.toDataURL("png");
 	
 	
