@@ -50,11 +50,11 @@ window.addEventListener('load', function () {
 		const gameCanvas = game.canvas;
 		gameCanvas.preserveDrawingBuffer=true;
 		console.log(gameCanvas.getContext('webgl'));
-		const dataUrl = gameCanvas.toDataURL("image/png");
+		const dataUrl = gameCanvas.toDataURL("image/jpg");
 	
 	
-		const blob = await fetch(dataUrl).blob();
-		
+		const blob = await (await fetch(dataUrl)).blob();
+		console.log(blob)
 		const filesArray = [
 		  new File(
 			[blob],
