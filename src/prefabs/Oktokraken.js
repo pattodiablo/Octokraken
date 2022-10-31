@@ -38,6 +38,11 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.kraken_shot = this.scene.sound.add('kraken_shot');
 		this.kraken_shot.loop = false;
 
+		this.bossfight01 = this.scene.sound.add('bossfight01');
+		this.bossfight01.loop = true;
+
+		
+
 	}
 
 	createBullets(){
@@ -81,7 +86,10 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		saliendoTimeline.play();
 	}
 
-	totalExplotion(){
+	totalExplotion() {
+
+		this.bossfight01.stop();
+
 		this.finalExplotionTimer = this.scene.time.addEvent({
 			delay: 100,                // ms
 			callback: function(){
@@ -112,6 +120,8 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	}
 
 	aparecer(){
+
+		this.bossfight01.play();
 
 		var entrandoTimeline = this.scene.tweens.createTimeline();
 		entrandoTimeline.add({
