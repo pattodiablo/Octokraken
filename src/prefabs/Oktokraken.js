@@ -120,7 +120,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	
 			//args: [],
 			callbackScope: this,
-			repeat: 40
+			repeat: 0
 		});
    
 	}
