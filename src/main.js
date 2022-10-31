@@ -46,7 +46,7 @@ window.addEventListener('load', function () {
 
 	game.shareEvent = async function(){
 		const dataUrl = game.canvas.toDataURL();
-	console.log(canvasElement)
+	console.log(dataUrl)
 	
 		const blob = await (await fetch(dataUrl)).blob();
 		
