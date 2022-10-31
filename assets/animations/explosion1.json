@@ -536,6 +536,81 @@
             "frameRate": 12,
             "skipMissedFrames": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "bigExplode",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "explotion2",
+                    "frame": "01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "04.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "05.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "06.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "07.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "08.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "09.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explotion2",
+                    "frame": "11.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 32,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,

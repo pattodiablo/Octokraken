@@ -35,6 +35,7 @@ create(){
 	this.playerLevel=1;
 	this.missileSpacing=40;
 	this.currentLevelFill = 0;
+	this.maxLevelFill = this.scene.lifeVisual2.width;
 	this.canFire=true;
 	this.isHurt=false;
 	this.canPlay = true;
@@ -65,6 +66,7 @@ create(){
 
 
 		this.crearParticulas();
+		this.apareceerFirstTime();
 		this.defaultIdleAnim();
 
 		this.laser_shot = this.scene.sound.add('laser_shot');
@@ -84,6 +86,40 @@ stopPlay(){
 	this.canFire=false;
 	this.canPlay=false;
 	this.desaparecer();
+}
+
+apareceerFirstTime(){
+	this.body.enable=false;
+	this.x=this.scene.cameras.main.centerX;
+	this.y=-50;
+	this.canPlay=false;
+	this.canFire=false;
+	
+	this.body.enable=false;
+
+	var aparecer = this.scene.tweens.createTimeline();
+	
+
+		aparecer.add({
+			targets: this,
+			delay:2000,
+			duration: 1000,
+			ease: 'Phaser.Math.Easing.Quadratic.Out',
+			y: 200,
+			x: this.scene.cameras.main.centerX,
+			
+			onComplete: function(){
+				this.targets[0].canPlay=true;
+				this.targets[0].scene.shipShield.visible=true;
+				this.targets[0].coolDowntime();
+			
+				
+			}
+
+		});
+		aparecer.play();
+
+
 }
 
 /*
@@ -173,7 +209,7 @@ console.log("player is hurt")
 			x: this.scene.cameras.main.centerX,
 			
 			onComplete: function(){
-			
+				this.targets[0].canPlay=true;
 				this.targets[0].scene.shipShield.visible=true;
 				this.targets[0].coolDowntime();
 			
@@ -187,7 +223,7 @@ coolDowntime(){
 	this.coolDownTimer = this.scene.time.addEvent({
 		delay: 2500,                // ms
 		callback: function(){
-			this.canPlay=true;
+		
 			this.canFire=true;
 			this.scene.shipShield.visible=false;
 			this.body.enable=true;

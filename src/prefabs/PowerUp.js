@@ -35,20 +35,23 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 	powerUpFill(powerUp,player){
 	
-		
-		if(player.currentLevelFill<400){
+		player.scene.score +=powerUp.PowerUpValue;
+		player.currentLevelFill+=powerUp.fillPower;
+
+		if(player.currentLevelFill<player.maxLevelFill){
 			player.scene.powerText.text="QUITO POWER " + player.playerLevel;
 	
-			player.scene.score +=powerUp.PowerUpValue;
-			player.currentLevelFill+=powerUp.fillPower;
+			
+		
 		}else{
-			if(player.playerLevel<4){
+			if(player.playerLevel<=3){
 
 				powerUp.shield_up.play();	
 				player.playerLevel++;
 				player.currentLevelFill=0;
 			}else{
-
+				player.playerLevel=4;
+				player.currentLevelFill=player.maxLevelFill;
 				player.scene.powerText.text="QUITO MAX POWER !!" ;
 			}
 			
