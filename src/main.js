@@ -45,9 +45,9 @@ window.addEventListener('load', function () {
 	game.scene.add("Boot", Boot, true);
 
 	game.shareEvent = async function(){
-		const canvasElement = game.canvas.toDataURL();
+		const dataUrl = game.canvas.toDataURL();
 	console.log(canvasElement)
-		const dataUrl = canvasElement.toDataURL("png");
+	
 		const blob = await (await fetch(dataUrl)).blob();
 		
 		const filesArray = [
