@@ -453,22 +453,22 @@ class Level extends Phaser.Scene {
 					this.wichEnemy = Phaser.Math.Between(1, 3);
 					switch(this.wichEnemy ){
 						case 1:
-							const enemy1 = new Enemy1(this, i*90+90, 960+j*70);
+							const enemy1 = new Enemy1(this, i*90+90, 970+j*90);
 							this.add.existing(enemy1);
 						break;
 
 						case 2:
-							const enemy2 = new Enemy2(this, i*90+90, 960+j*70);
+							const enemy2 = new Enemy2(this, i*90+90, 970+j*90);
 							this.add.existing(enemy2);
 						break;
 
 						case 3:
-							const enemy3= new Enemy3(this, i*90+90, 960+j*70);
+							const enemy3= new Enemy3(this, i*90+90, 970+j*90);
 							this.add.existing(enemy3);
 						break;
 
 						default:
-							const enemy4= new Enemy1(this, i*90+90, 960+j*70);
+							const enemy4= new Enemy1(this, i*90+90, 970+j*90);
 							this.add.existing(enemy4);
 						break;
 					}
