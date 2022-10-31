@@ -20,7 +20,7 @@ window.addEventListener('load', function () {
 	var game = new Phaser.Game({
 		width: 540,
 		height:  960,
-		type: Phaser.AUTO,
+		type: Phaser.CANVAS,
 		scale: {
 			mode: Phaser.Scale.ENVELOP,
 		
@@ -49,8 +49,8 @@ window.addEventListener('load', function () {
 		
 		const gameCanvas = game.canvas;
 		gameCanvas.preserveDrawingBuffer=true;
-		console.log(gameCanvas.getContext('webgl'));
-		const dataUrl = gameCanvas.toDataURL("image/jpg");
+		console.log(gameCanvas);
+		const dataUrl = gameCanvas.toDataURL();
 	
 	
 		const blob = await (await fetch(dataUrl)).blob();
