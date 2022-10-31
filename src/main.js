@@ -53,11 +53,11 @@ window.addEventListener('load', function () {
 		const dataUrl = gameCanvas.toDataURL("image/png");
 	
 	
-		const blob = await (await fetch(dataUrl)).blob();
+		const blob = dataUrl.blob();
 		
 		const filesArray = [
 		  new File(
-			[dataUrl],
+			[blob],
 			'alarcon.png',
 			{
 			  type: blob.type,
