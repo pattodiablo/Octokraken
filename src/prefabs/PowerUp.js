@@ -56,10 +56,11 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 			}
 			
 		}
-		
-		powerUp.destroy();
+		powerUp.pwrup02.play();
 		console.log("suena");
-		//this.pwrup02.play();
+		powerUp.destroy();
+		
+		
 		
 	}
 
@@ -87,7 +88,6 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 
 		this.isDestroyed=true;
 		this.scene.events.off(Phaser.Scenes.Events.UPDATE, this.update, this);
-		//this.pwrup02.play();
 		this.destroy();
 		
 		
