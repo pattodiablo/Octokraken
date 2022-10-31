@@ -41,8 +41,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.bossfight01 = this.scene.sound.add('bossfight01');
 		this.bossfight01.loop = true;
 
-		this.youwin01 = this.scene.sound.add('youwin01');
-		this.youwin01.loop = false;
+		
 
 		
 

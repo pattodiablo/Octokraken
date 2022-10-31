@@ -120,6 +120,9 @@ class Level extends Phaser.Scene {
 
 	create() {
 
+		this.youwin01 = this.sound.add('youwin01');
+		this.youwin01.loop = false;
+
 		this.editorCreate();
 		this.scene.scene.cameras.main.fadeIn(1000);
 
@@ -362,7 +365,9 @@ class Level extends Phaser.Scene {
 
 	}
 
-	ganaste(){
+	ganaste() {
+
+		this.youwin01.play();
 
 		this.jugarBtn.visible=true;
 
