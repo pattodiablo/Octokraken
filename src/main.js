@@ -43,6 +43,22 @@ window.addEventListener('load', function () {
 	game.scene.add("Preload", Preload);
 	game.scene.add("Level", Level);
 	game.scene.add("Boot", Boot, true);
+
+	game.shareEvent = async function(){
+		const shareData = {
+			title: 'MDN',
+			text: 'Learn web development on MDN!',
+			url: 'https://developer.mozilla.org'
+			}
+	
+		try {
+		await navigator.share(shareData);
+		
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
 });
 
 class Boot extends Phaser.Scene {

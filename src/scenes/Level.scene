@@ -168,6 +168,18 @@
             },
             "x": 371,
             "y": 666
+        },
+        {
+            "type": "Image",
+            "id": "adfad3a3-a45d-4ce7-addf-5532d5abb815",
+            "label": "shareBtn",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "shareBtn"
+            },
+            "x": 374,
+            "y": 800
         }
     ],
     "plainObjects": [],

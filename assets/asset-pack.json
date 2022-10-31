@@ -482,6 +482,11 @@
                 "key": "rejugarBtn"
             },
             {
+                "url": "assets/shareBtn.png",
+                "type": "image",
+                "key": "shareBtn"
+            },
+            {
                 "url": [
                     "src/prefabs/Shield.js"
                 ],

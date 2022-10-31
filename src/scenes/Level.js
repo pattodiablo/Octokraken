@@ -29,7 +29,7 @@ class Level extends Phaser.Scene {
 
 		// powerText
 		const powerText = this.add.text(40, 208, "", {});
-		powerText.text = "QUITO POWER 0";
+		powerText.text = "PATO POWER";
 		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
 		// shipShield
@@ -64,6 +64,9 @@ class Level extends Phaser.Scene {
 		// jugarBtn
 		const jugarBtn = this.add.image(371, 666, "jugarBtn");
 
+		// shareBtn
+		const shareBtn = this.add.image(374, 800, "shareBtn");
+
 		// lists
 		const enemigos = [];
 
@@ -80,6 +83,7 @@ class Level extends Phaser.Scene {
 		this.mensaje1 = mensaje1;
 		this.onLogo = onLogo;
 		this.jugarBtn = jugarBtn;
+		this.shareBtn = shareBtn;
 		this.enemigos = enemigos;
 
 		this.events.emit("scene-awake");
@@ -111,6 +115,8 @@ class Level extends Phaser.Scene {
 	onLogo;
 	/** @type {Phaser.GameObjects.Image} */
 	jugarBtn;
+	/** @type {Phaser.GameObjects.Image} */
+	shareBtn;
 	/** @type {Array<any>} */
 	enemigos;
 
@@ -182,6 +188,10 @@ class Level extends Phaser.Scene {
 		this.jugarBtn.visible=false;
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
+		this.shareBtn.x=this.scene.scene.cameras.main.width/2;
+		this.shareBtn.visible=true;
+		this.shareBtn.setInteractive().on('pointerup', this.game.shareEvent,this);
+
 		this.playerBullets=[];
 		this.enemies=[];
 		this.mainEnemy=[];
@@ -197,7 +207,7 @@ class Level extends Phaser.Scene {
 			loop: false
 		});
 
-		
+
 		this.createPlayerEnergyBar();
 
 		//this.kraken.aparecer();
@@ -217,7 +227,7 @@ class Level extends Phaser.Scene {
 			callback: function(){
 
 				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
-						
+
 				if(this.probabilidadATTACK>15){
 					if(!this.onLogo.visible){
 						this.onLogo.visible=true;
@@ -249,7 +259,7 @@ class Level extends Phaser.Scene {
 			delay: 4000,                // ms
 			callback: function(){
 				this.probabilidadATTACK = Phaser.Math.Between(1, 20);
-			
+
 				if(this.probabilidadATTACK>15){
 					if(this.canAttackPulpo){
 						this.generarPulpoAttack();
@@ -434,10 +444,10 @@ class Level extends Phaser.Scene {
 	}
 
 	createEnemies(){
-	
+
 
 				if(this.currentWave>this.wavesUntilKraken){
-					
+
 					this.crearPowerUps()
 					this.kraken.aparecer();
 					this.enemyCreationTimer.destroy();
@@ -447,7 +457,7 @@ class Level extends Phaser.Scene {
 						this.enemiestoCreate=13;
 					}
 					this.rowsTocreate = this.enemiestoCreate/this.enemiesInRow;
-					
+
 				for(var j=0; j<=this.rowsTocreate; j++){
 					for(var i=0; i<=this.enemiesInRow; i++){
 					this.wichEnemy = Phaser.Math.Between(1, 3);
