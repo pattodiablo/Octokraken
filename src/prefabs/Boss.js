@@ -30,9 +30,9 @@ class Boss extends Phaser.GameObjects.Sprite {
 		this.enemy_destroy.loop = false;
 		this.life = 50;
 
-		this.bossfight01 = this.sound.add('bossfight01');
+		this.bossfight01 = this.scene.sound.add('bossfight01');
 		this.bossfight01.loop = true;
-		this.bossfight01.play();
+		
 
 		
 	}
@@ -49,6 +49,8 @@ class Boss extends Phaser.GameObjects.Sprite {
     }
 
 	animarNacimiento(){
+
+		this.bossfight01.play();
 
 		var entrandoTimeline = this.scene.tweens.createTimeline();
 		entrandoTimeline.add({
