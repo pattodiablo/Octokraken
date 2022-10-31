@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\components",
+    "\\src\\prefabs",
     "\\src\\scenes"
   ],
-  "SelectedNode": "\\src\\scenes\\Historia.js",
   "PreviewInSolutionExplorer": false
 }
