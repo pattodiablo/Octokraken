@@ -57,7 +57,7 @@ window.addEventListener('load', function () {
 		
 		const filesArray = [
 		  new File(
-			[blob],
+			[dataUrl],
 			'alarcon.png',
 			{
 			  type: blob.type,
