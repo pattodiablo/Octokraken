@@ -193,7 +193,7 @@ class Level extends Phaser.Scene {
 		this.jugarBtn.setInteractive().on('pointerup', this.iniciarJuego,this);
 
 		this.shareBtn.x=this.scene.scene.cameras.main.width/2;
-		this.shareBtn.visible=false;
+		this.shareBtn.visible=true;
 		this.shareBtn.setInteractive().on('pointerup', this.game.shareEvent,this);
 
 		this.playerBullets=[];

@@ -45,12 +45,23 @@ window.addEventListener('load', function () {
 	game.scene.add("Boot", Boot, true);
 
 	game.shareEvent = async function(){
-		const shareData = {
-			title: 'MDN',
-			text: 'Learn web development on MDN!',
-			url: 'https://developer.mozilla.org'
+		const canvasElement = game.canvas;
+		console.log(canvasElement)
+		const dataUrl = canvasElement.toDataURL();
+		const blob = await (await fetch(dataUrl)).blob();
+		const filesArray = [
+		  new File(
+			[blob],
+			'alarcon.png',
+			{
+			  type: blob.type,
+			  lastModified: new Date().getTime()
 			}
-	
+		  )
+		];
+		const shareData = {
+			files: filesArray,
+		  };
 		try {
 		await navigator.share(shareData);
 		
