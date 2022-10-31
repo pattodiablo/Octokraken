@@ -28,6 +28,8 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		this.isDestroyed = false;
 		this.PowerUpValue = 10;
 
+		this.pwrup01 = this.scene.sound.add('pwrup01');
+		this.pwrup01.loop = false;
 		this.pwrup02 = this.scene.sound.add('pwrup02');
 		this.pwrup02.loop = false;
 		
@@ -56,7 +58,18 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 			}
 			
 		}
-		powerUp.pwrup02.play();
+
+		this.ranSound = Phaser.Math.Between(1, 2);
+		if (this.ranSound > 1) {
+			powerUp.pwrup01.play();
+		} else {
+			powerUp.pwrup02.play();
+        }
+		
+
+		
+
+
 		console.log("suena");
 		powerUp.destroy();
 		

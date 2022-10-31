@@ -28,6 +28,10 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 		this.body.setSize(60, 900, false);	
 		this.setOrigin(0.5,0)
 		this.showAlert();
+
+		this.tentacle01 = this.scene.sound.add('tentacle01');
+		this.tentacle01.loop = false;
+
 	}
 
 	playerCollide(player,brazo){
@@ -78,6 +82,8 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 	}
 
 	showArm(){
+
+		this.tentacle01.play();
 
 		this.visible=true;
 		this.y=this.scene.cameras.main.height;

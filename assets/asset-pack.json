@@ -464,6 +464,13 @@
             },
             {
                 "url": [
+                    "assets/audio/sfx/pwrup01.mp3"
+                ],
+                "type": "audio",
+                "key": "pwrup01"
+            },
+            {
+                "url": [
                     "assets/audio/sfx/pwrup02.mp3"
                 ],
                 "type": "audio",
@@ -512,6 +519,13 @@
                 ],
                 "type": "audio",
                 "key": "splash_screen"
+            },
+            {
+                "url": [
+                    "assets/audio/sfx/tentacle01.mp3"
+                ],
+                "type": "audio",
+                "key": "tentacle01"
             },
             {
                 "url": "assets/textoHistoria.png",
