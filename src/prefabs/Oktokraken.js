@@ -94,7 +94,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	totalExplotion() {
 
 		
-		this.youwin01.play();
+		
 
 		this.finalExplotionTimer = this.scene.time.addEvent({
 			delay: 100,                // ms
