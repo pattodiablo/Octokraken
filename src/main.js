@@ -45,8 +45,12 @@ window.addEventListener('load', function () {
 	game.scene.add("Boot", Boot, true);
 
 	game.shareEvent = async function(){
-		game.canvas.preserveDrawingBuffer=true
-		const dataUrl = game.canvas.toDataURL("png");
+	
+		
+		const gameCanvas = game.canvas;
+		gameCanvas.preserveDrawingBuffer=true;
+		console.log(gameCanvas.getContext('webgl'));
+		const dataUrl = gameCanvas.toDataURL("image/png").split(';base64,')[1];
 	
 	
 		const blob = await (await fetch(dataUrl)).blob();
