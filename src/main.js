@@ -60,7 +60,7 @@ window.addEventListener('load', function () {
 			[blob],
 			'alarcon.png',
 			{
-			  type: "jpg",
+			  type: blob.type,
 			  lastModified: new Date().getTime()
 			}
 		  )
