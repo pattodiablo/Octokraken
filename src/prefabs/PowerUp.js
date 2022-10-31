@@ -44,7 +44,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 			
 		
 		}else{
-			if(player.playerLevel<=4){
+			if(player.playerLevel<=3){
 
 				powerUp.shield_up.play();	
 				player.playerLevel++;

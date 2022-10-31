@@ -24,6 +24,8 @@ class BrazoPulpo extends Phaser.GameObjects.Sprite {
 		this.scene.physics.add.overlap(this.scene.player, this,this.playerCollide);
 		this.alertStripe.setOrigin(0.5,1);
 		this.alertStripe.setScale(0,0);
+		this.body.setOffset(15, 35);
+		this.body.setSize(60, 900, false);	
 		this.setOrigin(0.5,0)
 		this.showAlert();
 	}

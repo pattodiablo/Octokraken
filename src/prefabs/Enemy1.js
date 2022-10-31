@@ -196,7 +196,13 @@ class Enemy1 extends Phaser.GameObjects.Sprite {
 
 		}else{
 		
-			enemy.play("explosion1",true);
+			this.randomEffect = Phaser.Math.Between(1,2);
+			if(this.randomEffect>1){
+				enemy.play("bigExplode",true);
+			}else{
+				enemy.play("explosion1",true);
+			}
+		
 			enemy.enemy_destroy.play();	
 			enemy.body.enable=false;
 		

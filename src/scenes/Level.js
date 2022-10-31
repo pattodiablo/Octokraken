@@ -183,7 +183,18 @@ class Level extends Phaser.Scene {
 		this.enemies=[];
 		this.mainEnemy=[];
 		this.createParticlesQuito();
-		this.createEnemies();
+
+		this.createFirstEnemy = this.time.addEvent({
+			delay: 5000,                // ms
+			callback: function(){
+				this.createEnemies();
+			},
+			//args: [],
+			callbackScope: this,
+			loop: false
+		});
+
+		
 		this.createPlayerEnergyBar();
 
 		//this.kraken.aparecer();
@@ -464,7 +475,7 @@ class Level extends Phaser.Scene {
 			if(this.currentWave<11){
 
 						this.enemyCreationTimer = this.time.addEvent({
-						delay: Phaser.Math.Between(4000, 11000),                // ms
+						delay: Phaser.Math.Between(5000, 11000),                // ms
 						callback: this.createEnemies,
 						//args: [],
 						callbackScope: this,

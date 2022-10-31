@@ -165,6 +165,12 @@
                 "key": "Explotion"
             },
             {
+                "atlasURL": "assets/atlas/explotion2.json",
+                "textureURL": "assets/atlas/explotion2.png",
+                "type": "atlas",
+                "key": "explotion2"
+            },
+            {
                 "url": "src/prefabs/FinalExplotion.js",
                 "type": "script",
                 "key": "FinalExplotion"
