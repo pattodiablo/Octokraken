@@ -53,7 +53,7 @@ window.addEventListener('load', function () {
 		const dataUrl = gameCanvas.toDataURL("image/png");
 	
 	
-		const blob = dataUrl.blob();
+		const blob = await fetch(dataUrl).blob();
 		
 		const filesArray = [
 		  new File(
