@@ -2,9 +2,9 @@
     "section1": {
         "files": [
             {
-                "url": "assets/guapen.png",
+                "url": "assets/iniLogo.png",
                 "type": "image",
-                "key": "guapen"
+                "key": "iniLogo"
             }
         ]
     },

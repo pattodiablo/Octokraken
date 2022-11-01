@@ -22,19 +22,16 @@ class Preload extends Phaser.Scene {
 	/** @returns {void} */
 	editorCreate() {
 
-		// progress
-		const progress = this.add.text(400, 349, "", {});
-		progress.setOrigin(0.5, 0.5);
-		progress.text = "0%";
-		progress.setStyle({ "fontSize": "30px" });
+		// iniLogo
+		const iniLogo = this.add.image(396, 243, "iniLogo");
 
-		this.progress = progress;
+		this.iniLogo = iniLogo;
 
 		this.events.emit("scene-awake");
 	}
 
-	/** @type {Phaser.GameObjects.Text} */
-	progress;
+	/** @type {Phaser.GameObjects.Image} */
+	iniLogo;
 
 	/* START-USER-CODE */
 
@@ -46,8 +43,10 @@ class Preload extends Phaser.Scene {
 
 		this.editorPreload();
 
-	
-		this.progress.x=this.cameras.main.centerX;
+
+
+		this.iniLogo.x = this.cameras.main.centerX;
+		this.iniLogo.y = this.cameras.main.centerY;
 
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Inicio"));
 	}
