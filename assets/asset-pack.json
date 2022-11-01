@@ -34,28 +34,11 @@
                 "key": "BerenjenaBullet"
             },
             {
-                "url": "assets/boss.png",
-                "type": "image",
-                "key": "boss"
-            },
-            {
-                "url": [
-                    "src/prefabs/Boss.js"
-                ],
-                "type": "scripts",
-                "key": "Boss"
-            },
-            {
                 "url": [
                     "assets/audio/music/bossfight01.mp3"
                 ],
                 "type": "audio",
                 "key": "bossfight01"
-            },
-            {
-                "url": "assets/botonera.png",
-                "type": "image",
-                "key": "botonera"
             },
             {
                 "url": "assets/brazoPulpo.png",
@@ -66,16 +49,6 @@
                 "url": "src/prefabs/BrazoPulpo.js",
                 "type": "script",
                 "key": "BrazoPulpo"
-            },
-            {
-                "url": "assets/creditos.png",
-                "type": "image",
-                "key": "creditos"
-            },
-            {
-                "url": "src/scenes/Creditos.js",
-                "type": "sceneFile",
-                "key": "Creditos"
             },
             {
                 "url": [
@@ -193,11 +166,6 @@
                 "key": "flares"
             },
             {
-                "url": "src/scenes/GameOver.js",
-                "type": "sceneFile",
-                "key": "GameOver"
-            },
-            {
                 "url": [
                     "src/prefabs/GameOverAnimation.js"
                 ],
@@ -208,11 +176,6 @@
                 "url": "assets/ganasteLabel.png",
                 "type": "image",
                 "key": "ganasteLabel"
-            },
-            {
-                "url": "assets/heart.png",
-                "type": "image",
-                "key": "heart"
             },
             {
                 "url": [
@@ -293,11 +256,6 @@
                 ],
                 "type": "audio",
                 "key": "laser_shot"
-            },
-            {
-                "url": "assets/logo.png",
-                "type": "image",
-                "key": "logo"
             },
             {
                 "url": "assets/mensaje1.png",
@@ -405,11 +363,6 @@
                 "key": "patoTitle"
             },
             {
-                "url": "assets/player.png",
-                "type": "image",
-                "key": "player"
-            },
-            {
                 "url": [
                     "src/prefabs/Player.js"
                 ],
@@ -426,18 +379,6 @@
                 "url": "assets/animations/PlayerAnimations.json",
                 "type": "animation",
                 "key": "PlayerAnimations"
-            },
-            {
-                "url": "assets/playerBullet.png",
-                "type": "image",
-                "key": "playerBullet"
-            },
-            {
-                "url": [
-                    "src/prefabs/PlayerBullet.js"
-                ],
-                "type": "scripts",
-                "key": "PlayerBullet"
             },
             {
                 "url": "assets/playerPato.png",

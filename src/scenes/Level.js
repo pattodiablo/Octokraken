@@ -41,7 +41,7 @@ class Level extends Phaser.Scene {
 		this.add.existing(kraken);
 
 		// ganasteLabel
-		const ganasteLabel = this.add.sprite(395, 675, "ganasteLabel");
+		const ganasteLabel = this.add.sprite(309, 549, "ganasteLabel");
 
 		// scoreText
 		const scoreText = this.add.text(313, 148, "", {});
@@ -382,7 +382,9 @@ class Level extends Phaser.Scene {
 	ganaste() {
 
 		this.youwin01.play();
-
+		this.lifeVisual.visible=false;
+		this.lifeVisual2.visible=false;
+		this.powerText.visible=false;
 		this.jugarBtn.visible=true;
 		this.shareBtn.visible=true;
 

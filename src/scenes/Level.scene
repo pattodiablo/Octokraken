@@ -4,7 +4,9 @@
     "settings": {
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Level"
+        "sceneKey": "Level",
+        "borderWidth": 640,
+        "borderHeight": 960
     },
     "displayList": [
         {
@@ -94,8 +96,8 @@
             "texture": {
                 "key": "ganasteLabel"
             },
-            "x": 395,
-            "y": 675
+            "x": 309,
+            "y": 549
         },
         {
             "type": "Text",
