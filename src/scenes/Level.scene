@@ -186,6 +186,48 @@
             "y": 719,
             "scaleX": 0.7,
             "scaleY": 0.7
+        },
+        {
+            "type": "Sprite",
+            "id": "eeb646e9-b085-44e0-ae42-d0d88f05df57",
+            "label": "berenjeBomba",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "berenjeBomba"
+            },
+            "x": 342,
+            "y": 501
+        },
+        {
+            "prefabId": "d56220e1-48e4-4482-8a41-c2289c0bc3b4",
+            "id": "ee6c3fcb-138f-4c0e-936c-16c94fd66ca9",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "bombBtn",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 530,
+            "y": 431
+        },
+        {
+            "prefabId": "6c53f5ea-8831-4450-a906-5691312eb062",
+            "id": "20ca5bc7-a853-45c4-9cce-a48b0574cf87",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY"
+            ],
+            "label": "NukeBomb",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 296,
+            "y": 496,
+            "scaleX": 3,
+            "scaleY": 3
         }
     ],
     "plainObjects": [],

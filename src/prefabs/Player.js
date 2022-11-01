@@ -78,6 +78,8 @@ create(){
 		this.travel = this.scene.sound.add('travel');
 		this.travel.loop = true;
 
+		this.setDepth(4);
+
 }
 
 stopPlay(){
@@ -152,10 +154,9 @@ desaparecer(){
 hurtPlayer(){
 console.log("player is hurt")
 	//this.body.enable=false;
-	this.canPlay=false;
-	this.canFire=false;
+
 	this.playerLevel--;
-	this.body.enable=false;
+
 	this.tint=0xC70B24;
 	this.isHurt=true;
 	this.currentLevelFill = 0;
@@ -176,9 +177,16 @@ console.log("player is hurt")
 		repeat: 3
 	});
 
-	
+	this.retirar(true);
 
 
+
+}
+
+retirar(byHurt){
+	this.canPlay=false;
+	this.canFire=false;
+	this.body.enable=false;
 	var retirar = this.scene.tweens.createTimeline();
 	retirar.add({
 			targets: this,
@@ -192,10 +200,13 @@ console.log("player is hurt")
 				this.targets[0].x=this.targets[0].scene.cameras.main.centerX;
 				this.targets[0].tint=0xffffff;
 				this.targets[0].isHurt=false;
-	
-				this.targets[0].scene.enemies.forEach(enemy => {
-					enemy.destroyByDeadPlayer();
-				});
+				if(this.byHurt){
+					
+					this.targets[0].scene.enemies.forEach(enemy => {
+								enemy.destroyByDeadPlayer();
+							});
+				}
+				
 			}
 
 		});
@@ -218,6 +229,7 @@ console.log("player is hurt")
 
 		});
 		retirar.play();
+
 }
 coolDowntime(){
 	this.coolDownTimer = this.scene.time.addEvent({

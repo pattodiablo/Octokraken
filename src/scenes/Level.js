@@ -71,6 +71,19 @@ class Level extends Phaser.Scene {
 		shareBtn.scaleX = 0.7;
 		shareBtn.scaleY = 0.7;
 
+		// berenjeBomba
+		const berenjeBomba = this.add.sprite(342, 501, "berenjeBomba");
+
+		// bombBtn
+		const bombBtn = new BombBtn(this, 530, 431);
+		this.add.existing(bombBtn);
+
+		// NukeBomb
+		const nukeBomb = new NukeBomb(this, 296, 496);
+		this.add.existing(nukeBomb);
+		nukeBomb.scaleX = 3;
+		nukeBomb.scaleY = 3;
+
 		// lists
 		const enemigos = [];
 
@@ -88,6 +101,9 @@ class Level extends Phaser.Scene {
 		this.onLogo = onLogo;
 		this.jugarBtn = jugarBtn;
 		this.shareBtn = shareBtn;
+		this.berenjeBomba = berenjeBomba;
+		this.bombBtn = bombBtn;
+		this.nukeBomb = nukeBomb;
 		this.enemigos = enemigos;
 
 		this.events.emit("scene-awake");
@@ -121,6 +137,12 @@ class Level extends Phaser.Scene {
 	jugarBtn;
 	/** @type {Phaser.GameObjects.Image} */
 	shareBtn;
+	/** @type {Phaser.GameObjects.Sprite} */
+	berenjeBomba;
+	/** @type {BombBtn} */
+	bombBtn;
+	/** @type {NukeBomb} */
+	nukeBomb;
 	/** @type {Array<any>} */
 	enemigos;
 
@@ -130,10 +152,18 @@ class Level extends Phaser.Scene {
 
 	create() {
 
+
+
 		this.youwin01 = this.sound.add('youwin01');
 		this.youwin01.loop = false;
 
 		this.editorCreate();
+		this.berenjeBomba.visible=false;
+		this.berenjeBomba.x=this.cameras.main.centerX;
+		this.berenjeBomba.y=this.cameras.main.centerY;
+		this.berenjeBomba.setDepth(4);
+		this.bombBtn.setDepth(4);
+
 		this.scene.scene.cameras.main.fadeIn(1000);
 
 

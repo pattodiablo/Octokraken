@@ -611,6 +611,100 @@
             "frameRate": 32,
             "skipMissedFrames": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "nuke",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice11.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice12.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice13.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice14.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice4.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice5.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice6.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice7.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice8.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "explodeFinal",
+                    "frame": "slice9.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "yoyo": true,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,

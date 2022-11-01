@@ -1,0 +1,29 @@
+{
+    "id": "d56220e1-48e4-4482-8a41-c2289c0bc3b4",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 640,
+        "borderHeight": 960
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "fb92438b-0869-4b74-ac91-b69305fd64c8",
+            "label": "berenjeBombBtn",
+            "components": [],
+            "texture": {
+                "key": "BerenjeBombBtn"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

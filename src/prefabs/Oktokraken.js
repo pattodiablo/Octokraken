@@ -32,7 +32,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		//this.aparecer();
 	
 		this.setDepth(1);
-
+		this.isOnfight=false;
 		
 
 		this.kraken_shot = this.scene.sound.add('kraken_shot');
@@ -45,6 +45,12 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 
 		
 
+	}
+	nukeKraken(){
+		if(this.isOnfight){
+			this.enemyLife-=100;
+			this.krakenVisual.width=(this.largodeBarra*this.enemyLife)/this.fullEnemyLife;
+		}
 	}
 
 	createBullets(){
@@ -73,7 +79,8 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.moveTimer.destroy();
 		this.crearBullet.destroy();
 		this.scene.crearPowerUps.destroy();
-		this.scene.attackTimer.destroy()
+		this.scene.attackTimer.destroy();
+		this.isOnfight=false;
 		
 		var saliendoTimeline = this.scene.tweens.createTimeline();
 		saliendoTimeline.add({
@@ -126,7 +133,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	}
 
 	aparecer(){
-
+		this.isOnfight=true;
 		this.bossfight01.play();
 
 		var entrandoTimeline = this.scene.tweens.createTimeline();

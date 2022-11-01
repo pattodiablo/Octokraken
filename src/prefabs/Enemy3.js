@@ -62,6 +62,26 @@ class Enemy3 extends Phaser.GameObjects.Sprite {
 		
 		}
 
+	destroyByNuke(){
+
+			this.enemyLife=0;
+			this.play("explosion1",true);
+			this.enemy_destroy.play();	
+			this.body.enable=false;
+	
+			var destroyTimer = this.scene.time.addEvent({
+				delay: 500,                // ms
+				callback: function(){
+	
+					this.destroyObjetc(false);
+				},
+				//args: [],
+				callbackScope: this,
+				loop: false
+			});
+		
+		}
+
 	collideWithShield(shield, enemy){
 
 		enemy.enemyLife=0;

@@ -41,11 +41,12 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 		player.currentLevelFill+=powerUp.fillPower;
 
 		if(player.currentLevelFill<player.maxLevelFill){
-			player.scene.powerText.text="QUITO POWER " + player.playerLevel;
+			player.scene.powerText.text="QUITO PONTE ON " + player.playerLevel;
 	
-			
+		
 		
 		}else{
+			player.scene.bombBtn.isArmed=true;
 			if(player.playerLevel<=3){
 
 				powerUp.shield_up.play();	
@@ -54,7 +55,7 @@ class PowerUp extends Phaser.GameObjects.Sprite {
 			}else{
 				player.playerLevel=4;
 				player.currentLevelFill=player.maxLevelFill;
-				player.scene.powerText.text="QUITO MAX POWER !!" ;
+				player.scene.powerText.text="QUITO PONTE ON!!" ;
 			}
 			
 		}
