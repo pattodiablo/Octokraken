@@ -200,8 +200,10 @@ retirar(byHurt){
 				this.targets[0].x=this.targets[0].scene.cameras.main.centerX;
 				this.targets[0].tint=0xffffff;
 				this.targets[0].isHurt=false;
-				if(this.byHurt){
-					
+				
+				if(byHurt){
+					this.targets[0].scene.currentWave--;
+					console.log(this.targets[0].scene.currentWave)
 					this.targets[0].scene.enemies.forEach(enemy => {
 								enemy.destroyByDeadPlayer();
 							});

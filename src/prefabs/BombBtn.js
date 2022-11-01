@@ -27,6 +27,7 @@ class BombBtn extends Phaser.GameObjects.Sprite {
 
 		if(this.isArmed){
 			console.log("will deploy bomb");
+			this.scene.player.currentLevelFill=0;
 			this.scene.berenjeBomba.visible=true;
 			this.isArmed=false;
 			this.scene.player.retirar();

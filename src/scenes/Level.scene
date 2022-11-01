@@ -228,6 +228,19 @@
             "y": 496,
             "scaleX": 3,
             "scaleY": 3
+        },
+        {
+            "type": "Text",
+            "id": "5228fb75-654f-4bfd-9db9-64ecfebbbdf8",
+            "label": "puntajeText",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 244,
+            "y": 116,
+            "text": "TU PUNTAJE\n",
+            "fontFamily": "Arial",
+            "fontSize": "18px",
+            "fontStyle": "bold"
         }
     ],
     "plainObjects": [],
