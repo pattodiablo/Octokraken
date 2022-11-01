@@ -42,7 +42,7 @@
 },
 "hurt0002":
 {
-	"frame": {"x":461,"y":1,"w":91,"h":103},
+	"frame": {"x":1,"y":105,"w":91,"h":103},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":103},
@@ -50,7 +50,7 @@
 },
 "idlePlayer instancia 10000":
 {
-	"frame": {"x":553,"y":1,"w":91,"h":101},
+	"frame": {"x":93,"y":105,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
@@ -58,7 +58,7 @@
 },
 "idlePlayer instancia 10001":
 {
-	"frame": {"x":645,"y":1,"w":91,"h":101},
+	"frame": {"x":185,"y":105,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
@@ -66,7 +66,7 @@
 },
 "idlePlayer instancia 10002":
 {
-	"frame": {"x":737,"y":1,"w":91,"h":101},
+	"frame": {"x":277,"y":105,"w":91,"h":101},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":101},
@@ -74,34 +74,34 @@
 },
 "kraken instancia 10000":
 {
-	"frame": {"x":1,"y":105,"w":346,"h":322},
+	"frame": {"x":1,"y":209,"w":504,"h":471},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
-	"sourceSize": {"w":346,"h":322}
+	"spriteSourceSize": {"x":0,"y":0,"w":504,"h":471},
+	"sourceSize": {"w":504,"h":471}
 },
 "kraken instancia 10001":
 {
-	"frame": {"x":348,"y":105,"w":346,"h":322},
+	"frame": {"x":1,"y":681,"w":504,"h":471},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
-	"sourceSize": {"w":346,"h":322}
+	"spriteSourceSize": {"x":0,"y":0,"w":504,"h":471},
+	"sourceSize": {"w":504,"h":471}
 },
 "kraken instancia 10002":
 {
-	"frame": {"x":1,"y":428,"w":346,"h":322},
+	"frame": {"x":1,"y":1153,"w":504,"h":471},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":346,"h":322},
-	"sourceSize": {"w":346,"h":322}
+	"spriteSourceSize": {"x":0,"y":0,"w":504,"h":471},
+	"sourceSize": {"w":504,"h":471}
 }},
 "meta": {
 	"app": "Adobe Animate",
 	"version": "19.2.1.408",
 	"image": "OktokrakenPlayer.png",
 	"format": "RGBA8888",
-	"size": {"w":1024,"h":1024},
+	"size": {"w":512,"h":2048},
 	"scale": "1"
 }
 }
