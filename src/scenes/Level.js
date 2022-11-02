@@ -29,7 +29,7 @@ class Level extends Phaser.Scene {
 
 		// powerText
 		const powerText = this.add.text(40, 208, "", {});
-		powerText.text = "QUITO PONTE ON";
+		powerText.text = "PATO POWER";
 		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
 		// shipShield
@@ -89,6 +89,11 @@ class Level extends Phaser.Scene {
 		puntajeText.text = "TU PUNTAJE\n";
 		puntajeText.setStyle({ "fontFamily": "Arial", "fontSize": "18px", "fontStyle": "bold" });
 
+		// nombrePLayer
+		const nombrePLayer = this.add.text(447.53092529767804, 377.21875315732774, "", {});
+		nombrePLayer.text = "PATRICIO\nALARCÓN";
+		nombrePLayer.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "12px", "fontStyle": "bold" });
+
 		// lists
 		const enemigos = [];
 
@@ -110,6 +115,7 @@ class Level extends Phaser.Scene {
 		this.bombBtn = bombBtn;
 		this.nukeBomb = nukeBomb;
 		this.puntajeText = puntajeText;
+		this.nombrePLayer = nombrePLayer;
 		this.enemigos = enemigos;
 
 		this.events.emit("scene-awake");
@@ -151,6 +157,8 @@ class Level extends Phaser.Scene {
 	nukeBomb;
 	/** @type {Phaser.GameObjects.Text} */
 	puntajeText;
+	/** @type {Phaser.GameObjects.Text} */
+	nombrePLayer;
 	/** @type {Array<any>} */
 	enemigos;
 
@@ -203,6 +211,8 @@ class Level extends Phaser.Scene {
 		this.scoreText.y=100;
 		this.scoreText.setOrigin(0.5,0.5);
 		this.score=0;
+
+		this.nombrePLayer.setOrigin(0.5,0.5);
 
 		this.puntajeText.x=this.scene.scene.cameras.main.width/2;
 		this.puntajeText.y=85;
@@ -430,6 +440,7 @@ class Level extends Phaser.Scene {
 		this.powerText.visible=false;
 		this.jugarBtn.visible=true;
 		this.shareBtn.visible=true;
+		this.bombBtn.isArmed=false;
 
 		this.tweens.add({
 			targets: this.jugarBtn,
@@ -576,6 +587,9 @@ class Level extends Phaser.Scene {
 		if(this.player.x>this.cameras.main.width){
 			this.player.x=this.cameras.main.width;
 		}
+
+		this.nombrePLayer.x=this.player.x;
+		this.nombrePLayer.y=this.player.y-80;
 
 	}
 

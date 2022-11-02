@@ -75,7 +75,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	desaparecer() {
 
 		this.bossfight01.stop();
-
+		this.scene.bombBtn.isArmed=false;
 		this.moveTimer.destroy();
 		this.crearBullet.destroy();
 		this.scene.crearPowerUps.destroy();

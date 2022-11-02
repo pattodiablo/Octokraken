@@ -241,6 +241,20 @@
             "fontFamily": "Arial",
             "fontSize": "18px",
             "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "30d3ca9c-3c7c-4f5e-9881-cef2e46f679b",
+            "label": "nombrePLayer",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 447.53092529767804,
+            "y": 377.21875315732774,
+            "text": "PATRICIO\nALARCÓN",
+            "align": "center",
+            "fontFamily": "Arial",
+            "fontSize": "12px",
+            "fontStyle": "bold"
         }
     ],
     "plainObjects": [],
