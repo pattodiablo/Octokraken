@@ -336,6 +336,13 @@
                 "key": "moon"
             },
             {
+                "url": [
+                    "assets/audio/sfx/nuke.mp3"
+                ],
+                "type": "audio",
+                "key": "nuke"
+            },
+            {
                 "url": "src/prefabs/NukeBomb.js",
                 "type": "script",
                 "key": "NukeBomb"

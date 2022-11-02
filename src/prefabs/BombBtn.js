@@ -17,7 +17,8 @@ class BombBtn extends Phaser.GameObjects.Sprite {
 	/* START-USER-CODE */
 
 	create(){
-
+		this.nuke = this.scene.sound.add('nuke');
+		this.nuke.loop = false;
 		this.setInteractive().on('pointerup', this.deployBomb,this);
 		this.isArmed = false;
 	}
@@ -26,6 +27,7 @@ class BombBtn extends Phaser.GameObjects.Sprite {
 
 
 		if(this.isArmed){
+			this.nuke.play();	
 			console.log("will deploy bomb");
 			this.scene.player.currentLevelFill=0;
 			this.scene.berenjeBomba.visible=true;
