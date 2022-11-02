@@ -163,197 +163,6 @@
             "hideOnComplete": true
         },
         {
-            "key": "GameOver",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng00.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng01.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng02.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng03.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng04.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng05.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng06.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng07.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng08.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng09.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng10.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng11.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng12.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng13.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng14.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng15.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng16.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng17.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng18.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng19.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng20.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng21.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng22.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng23.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng24.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng25.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng26.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng27.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng28.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "explosion",
-                    "frame": "GameOverpng29.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": 1,
-            "showOnStart": true,
-            "hideOnComplete": true
-        },
-        {
             "key": "hit3",
             "type": "frame",
             "frames": [
@@ -705,6 +514,27 @@
             "skipMissedFrames": true,
             "yoyo": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "btn",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "berenjeBtn",
+                    "frame": "BerenjeBombBtn.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "berenjeBtn",
+                    "frame": "BerenjeBombBtn2.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

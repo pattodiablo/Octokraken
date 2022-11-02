@@ -21,6 +21,7 @@ class BombBtn extends Phaser.GameObjects.Sprite {
 		this.nuke.loop = false;
 		this.setInteractive().on('pointerup', this.deployBomb,this);
 		this.isArmed = false;
+		this.play("btn", true);
 	}
 
 	deployBomb(){

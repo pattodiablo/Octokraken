@@ -49,6 +49,9 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 	nukeKraken(){
 		if(this.isOnfight){
 			this.enemyLife-=100;
+			if(this.enemyLife<0){
+				this.enemyLife=0;
+			}
 			this.krakenVisual.width=(this.largodeBarra*this.enemyLife)/this.fullEnemyLife;
 		}
 	}

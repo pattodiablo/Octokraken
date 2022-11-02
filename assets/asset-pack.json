@@ -27,9 +27,15 @@
                 "key": "berenjeBomba"
             },
             {
-                "url": "assets/Explosion/BerenjeBombBtn.png",
+                "url": "assets/BerenjeBombBtn.png",
                 "type": "image",
                 "key": "BerenjeBombBtn"
+            },
+            {
+                "atlasURL": "assets/atlas/berenjeBtn.json",
+                "textureURL": "assets/atlas/berenjeBtn.png",
+                "type": "atlas",
+                "key": "berenjeBtn"
             },
             {
                 "url": "assets/berenjenaBullet.png",

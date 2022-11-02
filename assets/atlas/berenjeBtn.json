@@ -1,0 +1,28 @@
+{"frames": {
+
+"BerenjeBombBtn.png":
+{
+	"frame": {"x":0,"y":0,"w":226,"h":152},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":3,"w":226,"h":152},
+	"sourceSize": {"w":250,"h":158}
+},
+"BerenjeBombBtn2.png":
+{
+	"frame": {"x":226,"y":0,"w":226,"h":152},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":3,"w":226,"h":152},
+	"sourceSize": {"w":250,"h":158}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "berenjeBtn.png",
+	"format": "RGBA8888",
+	"size": {"w":452,"h":152},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:bdcb95014ea19f9d8056e6f273465354:e67911e25f3b84143651b60c2c347936:ec628008a28aea07b96e9a77f01f7f82$"
+}
+}
