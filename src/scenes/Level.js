@@ -29,7 +29,7 @@ class Level extends Phaser.Scene {
 
 		// powerText
 		const powerText = this.add.text(40, 208, "", {});
-		powerText.text = "PATO POWER";
+		powerText.text = "QUITO PONTE ON";
 		powerText.setStyle({ "fontFamily": "Arial", "fontSize": "26px", "fontStyle": "bold" });
 
 		// shipShield
@@ -62,12 +62,12 @@ class Level extends Phaser.Scene {
 		const onLogo = this.add.image(665, 538, "onLogo");
 
 		// jugarBtn
-		const jugarBtn = this.add.image(374, 607, "jugarBtn");
+		const jugarBtn = this.add.image(374, 574, "jugarBtn");
 		jugarBtn.scaleX = 0.7;
 		jugarBtn.scaleY = 0.7;
 
 		// shareBtn
-		const shareBtn = this.add.image(374, 719, "shareBtn");
+		const shareBtn = this.add.image(374, 686, "shareBtn");
 		shareBtn.scaleX = 0.7;
 		shareBtn.scaleY = 0.7;
 
@@ -94,6 +94,14 @@ class Level extends Phaser.Scene {
 		nombrePLayer.text = "PATRICIO\nALARCÓN";
 		nombrePLayer.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "12px", "fontStyle": "bold" });
 
+		// urlText
+		const urlText = this.add.text(91, 753, "", {});
+		urlText.text = "www.patricio.alarcon.com";
+		urlText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
+
+		// dalePato
+		const dalePato = this.add.image(329, 217, "dalePato");
+
 		// lists
 		const enemigos = [];
 
@@ -116,6 +124,8 @@ class Level extends Phaser.Scene {
 		this.nukeBomb = nukeBomb;
 		this.puntajeText = puntajeText;
 		this.nombrePLayer = nombrePLayer;
+		this.urlText = urlText;
+		this.dalePato = dalePato;
 		this.enemigos = enemigos;
 
 		this.events.emit("scene-awake");
@@ -159,6 +169,10 @@ class Level extends Phaser.Scene {
 	puntajeText;
 	/** @type {Phaser.GameObjects.Text} */
 	nombrePLayer;
+	/** @type {Phaser.GameObjects.Text} */
+	urlText;
+	/** @type {Phaser.GameObjects.Image} */
+	dalePato;
 	/** @type {Array<any>} */
 	enemigos;
 
@@ -212,6 +226,10 @@ class Level extends Phaser.Scene {
 		this.scoreText.setOrigin(0.5,0.5);
 		this.score=0;
 
+
+		this.dalePato.x=this.scene.scene.cameras.main.width/2;
+		this.dalePato.visible=false;
+
 		this.nombrePLayer.setOrigin(0.5,0.5);
 
 		this.puntajeText.x=this.scene.scene.cameras.main.width/2;
@@ -227,6 +245,9 @@ class Level extends Phaser.Scene {
 		this.alertHalo.visible=false;
 
 
+		this.urlText.x = this.scene.scene.cameras.main.width/2;
+		this.urlText.setOrigin(0.5,0.5);
+		this.urlText.visible=false;
 
 		this.messageWindow.x = this.scene.scene.cameras.main.width/2;
 		this.messageWindow.y =-this.scene.scene.cameras.main.height;
@@ -270,7 +291,62 @@ class Level extends Phaser.Scene {
 		//this.kraken.aparecer();
 		this.generateRandomPulpoAttack();
 		this.showLogoSometimes();
+		this.desaparecerNombre();
+		this.showPato();
+	}
 
+	showPato(){
+		this.dalePato.setScale(0.1);
+		this.dalePato.visible=true;
+		var entrandoTimeline = this.tweens.createTimeline();
+		entrandoTimeline.add({
+			targets: this.dalePato,
+			scale: 1,
+			duration: 200,
+			ease: "Phaser.Math.Easing.Quadratic.In",
+
+			repeat: 0
+
+		});
+
+		entrandoTimeline.add({
+			targets: this.dalePato,
+			scale: 1.05,
+			duration: 200,
+			ease: "Phaser.Math.Easing.Quadratic.In",
+			yoyo:true,
+			repeat: 3
+
+		});
+
+		entrandoTimeline.add({
+			targets: this.dalePato,
+			scale: 0.1,
+			duration: 200,
+			ease: "Phaser.Math.Easing.Quadratic.In",
+
+			onComplete: function(){
+				this.dalePato.visible=false;
+			},
+			onCompleteScope:this,
+			repeat: 0
+
+		});
+
+
+		entrandoTimeline.play();
+	}
+
+	desaparecerNombre(){
+		var timer = this.time.addEvent({
+			delay: 6000,                // ms
+			callback: function(){
+				this.nombrePLayer.destroy();
+			},
+			//args: [],
+			callbackScope: this,
+			loop: false
+		});
 	}
 
 	iniciarJuego(){
@@ -433,7 +509,7 @@ class Level extends Phaser.Scene {
 	}
 
 	ganaste() {
-
+		this.urlText.visible=true;
 		this.youwin01.play();
 		this.lifeVisual.visible=false;
 		this.lifeVisual2.visible=false;

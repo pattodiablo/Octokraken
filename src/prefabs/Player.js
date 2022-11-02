@@ -187,6 +187,7 @@ retirar(byHurt){
 	this.canPlay=false;
 	this.canFire=false;
 	this.body.enable=false;
+	
 	var retirar = this.scene.tweens.createTimeline();
 	retirar.add({
 			targets: this,
@@ -196,7 +197,7 @@ retirar(byHurt){
 			y: -50,
 			
 			onComplete: function(){
-			
+				this.targets[0].scene.showPato();
 				this.targets[0].x=this.targets[0].scene.cameras.main.centerX;
 				this.targets[0].tint=0xffffff;
 				this.targets[0].isHurt=false;
@@ -223,6 +224,7 @@ retirar(byHurt){
 			
 			onComplete: function(){
 				this.targets[0].canPlay=true;
+			
 				this.targets[0].scene.shipShield.visible=true;
 				this.targets[0].coolDowntime();
 			

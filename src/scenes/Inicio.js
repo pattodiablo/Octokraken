@@ -129,7 +129,7 @@ class Inicio extends Phaser.Scene {
 
 	iniciarJuego(){
 		this.splash_screen.stop();
-		this.scene.start('Level');
+		this.scene.start('Historia');
 	}
 	/* END-USER-CODE */
 }

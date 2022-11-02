@@ -66,6 +66,11 @@
                 "key": "BrazoPulpo"
             },
             {
+                "url": "assets/dalePato.png",
+                "type": "image",
+                "key": "dalePato"
+            },
+            {
                 "url": [
                     "assets/audio/sfx/dm_alert1.mp3"
                 ],

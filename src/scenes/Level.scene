@@ -56,7 +56,7 @@
             "components": [],
             "x": 40,
             "y": 208,
-            "text": "PATO POWER",
+            "text": "QUITO PONTE ON",
             "fontFamily": "Arial",
             "fontSize": "26px",
             "fontStyle": "bold"
@@ -169,7 +169,7 @@
                 "key": "jugarBtn"
             },
             "x": 374,
-            "y": 607,
+            "y": 574,
             "scaleX": 0.7,
             "scaleY": 0.7
         },
@@ -183,7 +183,7 @@
                 "key": "shareBtn"
             },
             "x": 374,
-            "y": 719,
+            "y": 686,
             "scaleX": 0.7,
             "scaleY": 0.7
         },
@@ -255,6 +255,31 @@
             "fontFamily": "Arial",
             "fontSize": "12px",
             "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "56777d56-1d2c-4c32-bf98-c530b0deb98a",
+            "label": "urlText",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 91,
+            "y": 753,
+            "text": "www.patricio.alarcon.com",
+            "fontFamily": "Arial",
+            "fontSize": "36px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Image",
+            "id": "42f70288-1abf-4169-9679-bfa751ed6ad0",
+            "label": "dalePato",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "dalePato"
+            },
+            "x": 329,
+            "y": 217
         }
     ],
     "plainObjects": [],
