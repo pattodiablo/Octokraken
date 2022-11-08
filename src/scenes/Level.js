@@ -96,7 +96,7 @@ class Level extends Phaser.Scene {
 
 		// urlText
 		const urlText = this.add.text(91, 753, "", {});
-		urlText.text = "www.patricio.alarcon.com";
+		urlText.text = "www.patricio-alarcon.com";
 		urlText.setStyle({ "fontFamily": "Arial", "fontSize": "36px", "fontStyle": "bold" });
 
 		// dalePato
