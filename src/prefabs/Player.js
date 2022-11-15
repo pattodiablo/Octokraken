@@ -39,6 +39,7 @@ create(){
 	this.canFire=true;
 	this.isHurt=false;
 	this.canPlay = true;
+	
 
 	this.scene.input.on('pointerdown', function (pointer) { 
 
@@ -133,7 +134,7 @@ collideKrakenBullet(){
 
 */
 desaparecer(){
-
+	this.body.enable=false;
 	var desaparecer = this.scene.tweens.createTimeline();
 	desaparecer.add({
 			targets: this,
@@ -466,8 +467,8 @@ update(){
 				if(this.canPlay){
 					this.yDiff=this.currentMouseY-this.scene.input.y;
 					this.xDiff=this.currentMouseX-this.scene.input.x;
-					this.y-=this.yDiff/20;
-					this.x-=this.xDiff/20;
+					this.y-=this.yDiff/30;
+					this.x-=this.xDiff/30;
 				}
 			
 

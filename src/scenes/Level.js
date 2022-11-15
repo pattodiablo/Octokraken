@@ -567,7 +567,8 @@ class Level extends Phaser.Scene {
 
 
 	}
-	crearPowerUps(){
+	crearPowerUpsfunc(){
+	
 		this.crearPowerUps = this.time.addEvent({
 			delay: 500,                // ms
 			callback: function(){
@@ -585,9 +586,18 @@ class Level extends Phaser.Scene {
 
 				if(this.currentWave>this.wavesUntilKraken){
 
-					this.crearPowerUps()
+					this.crearPowerUpsfunc();
 					this.kraken.aparecer();
-					this.enemyCreationTimer.destroy();
+					if(this.enemyCreationTimer !== "undefined"){
+						try{
+							this.enemyCreationTimer.destroy()
+						console.log("timer destroyed");
+						}
+						catch{
+							console.log("no timer to destroy")
+						}
+					}
+				
 				}else{
 					this.enemiestoCreate = this.currentWave*3;
 					if(this.enemiestoCreate>=13){
@@ -624,7 +634,7 @@ class Level extends Phaser.Scene {
 				}
 				}
 
-			if(this.currentWave<11){
+			if(this.currentWave<this.wavesUntilKraken+1){
 
 						this.enemyCreationTimer = this.time.addEvent({
 						delay: Phaser.Math.Between(5000, 11000),                // ms

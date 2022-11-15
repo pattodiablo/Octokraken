@@ -27,7 +27,7 @@ class Oktokraken extends Phaser.GameObjects.Sprite {
 		this.fullEnemyLife = this.enemyLife;
 		this.largodeBarra = 400;
 		this.enemyValue = 500;
-		this.body.setOffset(110, 80);
+		this.body.setOffset(190, 100);
 		this.body.setSize(120, 170, false);	
 		//this.aparecer();
 	
