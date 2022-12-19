@@ -67,6 +67,8 @@ window.addEventListener('load', function () {
 		];
 		const shareData = {
 			files: filesArray,
+			text: 'Llegó la hora de juntos impedir que los mismos politiqueros de siempre se tomen la ciudad para sus chanchullos. Vamos por un Quito con FUTURO. Juega y salva la ciudad ahora!',  // Text to be shared
+			url: 'https://patricio-alarcon.com/'   // URL to be shared
 		  };
 		try {
 		await navigator.share(shareData);
