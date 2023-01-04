@@ -39,6 +39,9 @@ create(){
 	this.canFire=true;
 	this.isHurt=false;
 	this.canPlay = true;
+	this.drag = 1.5;
+	this.maxDifference = 5;
+
 	
 
 	this.scene.input.on('pointerdown', function (pointer) { 
@@ -465,10 +468,47 @@ update(){
 	
 			if(this.isMouseDown){
 				if(this.canPlay){
-					this.yDiff=this.currentMouseY-this.scene.input.y;
-					this.xDiff=this.currentMouseX-this.scene.input.x;
-					this.y-=this.yDiff/30;
-					this.x-=this.xDiff/30;
+
+					this.xDiff = (this.currentMouseX - this.scene.input.x) / 10;
+					this.yDiff = (this.currentMouseY - this.scene.input.y) / 10;
+				
+					
+
+					if(Math.sign(this.yDiff)>0){
+					
+						if(this.yDiff>this.maxDifference){
+							this.yDiff=this.maxDifference;
+						}
+					}else{
+
+						if(this.yDiff<-this.maxDifference){
+							this.yDiff=-this.maxDifference;
+						}
+					
+					}
+					
+					if(Math.sign(this.xDiff)>0){
+					
+						if(this.xDiff>this.maxDifference){
+							this.xDiff=this.maxDifference;
+						}
+					}else{
+
+						if(this.xDiff<-this.maxDifference){
+							this.xDiff=-this.maxDifference;
+						}
+					
+					}
+
+					this.y -= this.yDiff;
+					this.x -= this.xDiff;
+			
+					console.log(this.yDiff);
+				
+				
+					
+				
+				
 				}
 			
 
